@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/static/css/login_reglogin.css"/>
+    <script src="/static/js/jquery.min.js" type="text/javascript"></script>
+        <title>登陆</title>
+</head>
+<body>
+	<div class="bg">
+		<img src="/static/images/background.jpg" alt="">
+	</div>
+	<div class="main">
+		<div class="header" >
+			<h1>Login!</h1>
+		</div>
+		<p></p>
+			<ul class="right-form">
+				<h2>Login:</h2>
+				<li><input type="text" class="username" name="username" placeholder="Username" required/></li>
+				<li><input type="password" class="password" name="password" placeholder="Password" required/></li>
+				<input type="button" value="登录" onclick="login()">
+				<div class="clear"> </div>
+			</ul>
+			<div class="clear"> </div>
+	</div>
+	
+</body>
+
+    <script>
+        function login(){
+        var username = $('.username').val()
+        var password = $('.password').val()
+        var post_data = {'username':username, 'password':password }
+
+        $.ajax({
+        // 请求方式
+        type:"post",
+        // contentType 
+        contentType:"application/json",   // 修改contenttype头，表示传递json数据，不再是form表单了
+        // dataType
+        dataType:"json",
+        // url
+        url:"http://127.0.0.1:8000/v1/tokens",
+        // url:"http://127.0.0.1:8000/test/",
+        // 把JS的对象或数组序列化一个json 字符串
+        data:JSON.stringify(post_data),
+        // result 为请求的返回结果对象
+        success:function (result) {
+            if (200 == result.code){
+                window.localStorage.setItem('dnblog_token', result.data.token)
+                window.localStorage.setItem('dnblog_user', result.username)
+                alert('登陆成功')
+                refer_url = document.referrer
+                //如果是项目内部的请求，回跳到上一步
+                if (refer_url.search('127.0.0.1') != -1){
+
+                    window.location = refer_url;
+
+                }else{
+
+                    window.location =  '/' + result.username + '/topics';
+                }
+
+            }else{
+                alert(result.error)
+            }
+        }
+    });
+
+    }
+    </script>
+
+</html>

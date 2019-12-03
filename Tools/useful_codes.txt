@@ -1,0 +1,7 @@
+常用命令.txt
+# 打包
+tar -zcvf weather_client.tar.gz weather_client
+# 数据库备份
+mysqldump -uroot -p out_dbname > ~/weather1130.sql
+# 数据库还原
+mysqldump -uroot -p in_dbname < ~/weather1130.sql

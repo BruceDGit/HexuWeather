@@ -1,0 +1,293 @@
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial;
+        color: white;
+        padding: 0;
+        margin: 0;
+        background: url("/static/images/background.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    }
+    .container{
+        width: 1000px;
+        margin: 0 auto;
+    }
+    .header {
+        height: 134px;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+    }
+    .header h1 {
+        float: left;
+        margin: 35px 0 0 40px;
+        font-family: '楷体 Bold', '楷体';
+        font-weight: 700;
+        font-style: normal;
+        font-size: 48px;
+        color: #ffffff;
+    }
+    .searchBox {
+        position: absolute;
+        top: 67px;
+        left: 27.5%;
+        width: 45%;
+        height: 30px;
+        margin: -15px auto;
+        border: solid 1px #666;
+        border-radius: 15px;
+        vertical-align: baseline;
+        background-color: #FFF;
+    }
+    .searchBox form input[type="text"] {
+        border: none;
+        outline: none;
+        background: none;
+        font-size:10pt;
+        color:#666;
+        width:90%;
+        height: 30px;
+        padding: 3px 8px;
+        position: absolute; 
+        left: 8px;
+        line-height: 30px;
+    }
+    .searchBox form input[type="submit"] {
+        padding: 0%;
+        margin: 4px 4px;
+        border: none;
+        cursor: pointer;
+        background: url("/static/images/search.png") no-repeat -3px -1px;
+        position: absolute;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        outline: none;
+    }
+    .header .topNav{
+        padding: 0%;
+        margin: 9px 0 0 -189px;
+        position: absolute;
+        top: 82px;
+        left: 50%;
+        color: #ffffff;
+        list-style-type: none;
+    }
+    .header .topNav li{
+        display: inline-block;
+        cursor: pointer;
+        margin: 0 20px;	
+        
+    }
+    .header .topLR{
+        padding: 0%;
+        margin: 9px 0 0 0;
+        position: absolute;
+        top: 82px;
+        right: 0%;
+        color: #ffffff;
+        list-style-type: none;
+    }
+    a:link, a:visited{
+        text-decoration: none;
+        cursor: pointer;
+        color: #ffffff;
+    }
+    .header .active_dp{
+        padding: 0%;
+        margin: 0%;
+        height: 20px;
+        line-height: 20px;
+        position: absolute;
+        bottom: 0%;
+        left: 20px;
+        font-size: 10pt;
+    }
+    .header .active_dp p{
+        margin: 0%;
+        padding: 0%;
+    }
+    .c-banner{
+      padding: 0;
+      margin-top: 10px;
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+    .c-banner img{
+      width: 100%;
+    }
+    .c-banner .banner ul{
+      list-style: none;
+      padding-left: 0px;
+      margin-bottom: 0px;
+    }
+    .c-banner .banner ul li{
+      display: none;
+      opacity: 0;
+    }
+    .c-banner .banner ul li:nth-child(1){
+      opacity: 1;
+      display: block;
+    }
+    .c-banner .banner ul li img{
+      width: 100%;
+      position: absolute;
+      top: 0px;
+    }
+    .c-banner .nexImg,.c-banner .preImg{
+      padding: 25px 10px 25px 10px;
+      position: absolute;
+      top: 50%;
+      margin-top: -53px;
+      opacity: 0.1;
+      border-radius: 5px;
+      z-index: 10;
+    }
+    .c-banner .nexImg:hover,.c-banner .preImg:hover{
+      opacity: 0.8;
+    }
+    .c-banner .nexImg{
+      right: 0px;
+    }
+    .c-banner .jumpBtn{
+      width: 100%;
+      position: absolute;
+      bottom: 5px;
+      text-align: center;
+    }
+    .c-banner .jumpBtn ul{
+      margin-bottom: 0px;
+      padding: 0px;
+    }
+    .c-banner .jumpBtn ul li{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: inline-block;
+      background-color: white;
+      opacity: 0.9;
+      margin-left: 10px;
+    }
+    .c-banner .jumpBtn ul li:first-child{
+      margin-left: 0px;
+    }
+  .leftcolumn {   
+    float: left;
+    width: 75%;
+  }
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+  }
+    .rightcolumn  .card {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      margin-top: 25px;
+      overflow: hidden;
+    }
+  .rightcolumn .card .right{
+    list-style-type: none;
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+  }
+  .rightcolumn .card .right li{
+    overflow: hidden;
+    width: 100%;
+  }
+  .rightcolumn .card .right li>*{
+    float: left;
+    margin: 0;
+    padding: 0;
+    padding-right: 8px;
+    width: 33%;
+    height: 40px;
+    line-height: 60px;
+    font-size: 12px;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+  }
+  .rightcolumn .card .right .viewArea{
+    width: 34%;
+  }
+  .rightcolumn .card .right .firstLine>*{
+    height: 30px;
+    line-height: 45px;
+  }
+  .rightcolumn .card .right .headerLine>*{
+    font-size: 14px;
+  }
+  .fakeimg {
+    border: solid 1px blue;
+    width: 100%;
+    padding: 20px;
+  }
+  .card {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    margin-top: 25px;
+    overflow: hidden;
+  }
+  .card h2{
+    display: inline-block;
+    font-family: 'Arial Negreta', 'Arial Normal', 'Arial';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: left;
+    height: 16px;
+    line-height: 16px;
+    margin: 0;
+  }
+  .card .more{
+    float: right;
+    margin: 0;
+    padding: 0;
+    padding-right: 8px;
+    padding-top: 4px;
+    font-size: 12px;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .footer {
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .footer p{
+    font-size: 100%;
+    font: inherit;
+    text-align: center;
+  }
+  
+  .footer a:link, .footer a:visited{
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #ffffff;
+  }
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .topnav a {
+      float: none;
+      width: 100%;
+    }
+  }

@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>旅游</title>
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/travel_info.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="logo">和煦天气</h1>
+            <div class="searchBox">
+                <form>
+                    <input type="text" onfocus="this.value = '';" placeholder="输入城市、区县、景点名称 查天气" }"><input type="submit"
+                        value="">
+                </form>
+            </div>
+
+            <ul class="topNav">
+                <li>
+                    <a href="/index">首页</a>
+                </li>
+                <li>
+                    <a href="/weather">天气</a>
+                </li>
+                <li>
+                    <a href="/news">资讯</a>
+                </li>
+                <li>
+                    <a href="/trip">出行</a>
+                </li>
+                <li>
+                    <a href="/travel">旅游</a>
+                </li>
+            </ul>
+            <ul class="topLR">
+                <li>
+                    <a href="/login">登录</a>/
+                    <a href="/register">注册</a>
+                </li>
+            </ul>
+            <div class="active_dp">
+                <p>
+                    <span><a href="/index">首页</a></span>
+                    >>
+                    <span>旅游</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="c-banner">
+                <div class="banner">
+                    <ul>
+                        <li><img src="/static/images/u225_state1.png"></li>
+                        <li><img src="/static/images/u225_state1.png"></li>
+                        <li><img src="/static/images/u225_state1.png"></li>
+                    </ul>
+                </div>
+                <div class="nexImg">
+                    <img src="/static/images/nexImg.png" />
+                </div>
+                <div class="preImg">
+                    <img src="/static/images/preImg.png" />
+                </div>
+                <div class="jumpBtn">
+                    <ul>
+                        <li jumpImg="0"></li>
+                        <li jumpImg="1"></li>
+                        <li jumpImg="2"></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="leftcolumn">
+                <div class="card">
+                    <div id="tral_info">
+                    <h2>景点名称</h2>
+                    
+                        <div class="trav_bottom">
+                            <div class="trav_scrollY">
+                            <ul class="trav_scroll_content clearfix">
+                            <li>
+                            <p>星期五</p>
+                            <h3>11月22日</h3>
+                            <!-- <img src="//static.tianqistatic.com/static/wap2018/ico2/b1.png" alt="" width="42px" height="42px"/> -->
+                            <div class="trav_weather">多云转阴</div>
+                            <div class="trav_temp">4℃~13℃</div>
+                            </li>
+                            <li>
+                            <p>星期六</p>
+                            <h3>11月23日</h3>
+                            <!-- <img src="//static.tianqistatic.com/static/wap2018/ico2/b2.png" alt="" width="42px" height="42px"/> -->
+                            <div class="trav_weather">阴转多云</div>
+                            <div class="trav_temp">4℃~12℃</div>
+                            </li>
+                            <li>
+                            <p>星期日</p>
+                            <h3>11月24日</h3>
+                            <!-- <img src="//static.tianqistatic.com/static/wap2018/ico2/b1.png" alt="" width="42px" height="42px"/> -->
+                            <div class="trav_weather">多云</div>
+                            <div class="trav_temp">-1℃~8℃</div>
+                            </li>
+                            <li>
+                            <p>星期一</p>
+                            <h3>11月25日</h3>
+                            <!-- <img src="//static.tianqistatic.com/static/wap2018/ico2/b0.png" alt="" width="42px" height="42px"/> -->
+                            <div class="trav_weather">晴</div>
+                            <div class="trav_temp">-2℃~5℃</div>
+                            </li>
+                            <li>
+                            <p>星期二</p>
+                            <h3>11月26日</h3>
+                            <!-- <img src="//static.tianqistatic.com/static/wap2018/ico2/b1.png" alt="" width="42px" height="42px"/> -->
+                            <div class="trav_weather">多云</div>
+                            <div class="trav_temp">0℃~7℃</div>
+                            </li>
+                            <li>
+                            <p>星期三</p>
+                            <h3>11月27日</h3>
+                            <!-- <img src="//static.tianqistatic.com/static/wap2018/ico2/b0.png" alt="" width="42px" height="42px"/> -->
+                            <div class="trav_weather">晴</div>
+                            <div class="trav_temp">-2℃~5℃</div>
+                            </li>
+                            <li>
+                            <p>星期四</p>
+                            <h3>11月28日</h3>
+                            <!-- <img src="//static.tianqistatic.com/static/wap2018/ico2/b0.png" alt="" width="42px" height="42px"/> -->
+                            <div class="trav_weather">晴</div>
+                            <div class="trav_temp">-3℃~4℃</div>
+                            </li>
+                            <li>
+                            <p>星期五</p>
+                            <h3>11月29日</h3>
+                            <!-- <img src="//static.tianqistatic.com/static/wap2018/ico2/b1.png" alt="" width="42px" height="42px"/> -->
+                            <div class="trav_weather">多云</div>
+                            <div class="trav_temp">-1℃~5℃</div>
+                            </li>
+                            <li>
+                            <p>星期六</p>
+                            <h3>11月30日</h3>
+                            <!-- <img src="//static.tianqistatic.com/static/wap2018/ico2/b1.png" alt="" width="42px" height="42px"/> -->
+                            <div class="trav_weather">多云</div>
+                            <div class="trav_temp">1℃~6℃</div>
+                            </li>
+                            <li>
+                            <p>星期日</p>
+                            <h3>12月01日</h3>
+                            <!-- <img src="//static.tianqistatic.com/static/wap2018/ico2/b2.png" alt="" width="42px" height="42px"/> -->
+                            <div class="trav_weather">阴</div>
+                            <div class="trav_temp">-4℃~6℃</div>
+                            </li>
+                            <li>
+                            <p>星期一</p>
+                            <h3>12月02日</h3>
+                            <!-- <img src="//static.tianqistatic.com/static/wap2018/ico2/b1.png" alt="" width="42px" height="42px"/> -->
+                            <div class="trav_weather">多云</div>
+                            <div class="trav_temp">-5℃~2℃</div>
+                            </li>
+                            <li>
+                            <p>星期二</p>
+                            <h3>12月03日</h3>
+                            <!-- <img src="//static.tianqistatic.com/static/wap2018/ico2/b0.png" alt="" width="42px" height="42px"/> -->
+                            <div class="trav_weather">晴</div>
+                            <div class="trav_temp">-4℃~3℃</div>
+                            </li>
+                            <li>
+                            <p>星期三</p>
+                            <h3>12月04日</h3>
+                            <!-- <img src="//static.tianqistatic.com/static/wap2018/ico2/b0.png" alt="" width="42px" height="42px"/> -->
+                            <div class="trav_weather">晴</div>
+                            <div class="trav_temp">-3℃~5℃</div>
+                            </li>
+                            <li>
+                            <p>星期四</p>
+                            <h3>12月05日</h3>
+                            <!-- <img src="//static.tianqistatic.com/static/wap2018/ico2/b0.png" alt="" width="42px" height="42px"/> -->
+                            <div class="trav_weather">晴</div>
+                            <div class="trav_temp">-2℃~5℃</div>
+                            </li>
+                            <li>
+                            <p>星期五</p>
+                            <h3>12月06日</h3>
+                            <!-- <img src="//static.tianqistatic.com/static/wap2018/ico2/b1.png" alt="" width="42px" height="42px"/> -->
+                            <div class="trav_weather">多云</div>
+                            <div class="trav_temp">-2℃~6℃</div>
+                            </li>
+                            <!-- <li>
+                            <a href="/nankaiqu/tjncphxcjingdian/30/" title="天津南翠屏滑雪场30天天气" target="_blank">
+                            <div class="jingdian_more_a"><img src="//static.tianqistatic.com/static/img/jingdian_more.png" alt="" width="26px" height="14px"/></div>
+                            <text style="width:auto">30日天气</text>
+                            </a>
+                            </li> -->
+                            </ul>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>旅游及时报</h2>
+                    <div class="tral_title">
+                        <a href="http://www.enorth.com.cn/">查看更多&gt;&gt;</a>
+                    </div>
+                    <div class="bottom">
+                        <div class="content">
+
+                            <ul>
+                                <li>
+                                    <a
+                                        href=" http://travel.enorth.com.cn/system/2019/09/26/037688757.shtml">十一出游去哪里？魅力天津"数"风流</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.shundecity.com/s/ts/2014/gqj.html">国庆逢重阳 全家出游来一场重阳味儿的十一假期</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://baike.baidu.com/item/%E5%A4%A9%E6%B4%A5%E6%B0%B4%E4%B8%8A%E5%85%AC%E5%9B%AD/10681768?fromtitle=%E6%B0%B4%E4%B8%8A%E5%85%AC%E5%9B%AD&fromid=74812&fr=aladdin">30万株花草争艳
+                                        水上公园“美颜”</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="http://news.cctv.com/2019/09/26/ARTIZZQrM2yStymi7qGOJ3r8190926.shtml">首博三展展现百余件各地国宝</a>
+                                </li>
+                                <li>
+                                    <a href="https://new.qq.com/omn/20181026/20181026F0VH4J.html">“十一”蓟州赏秋注意安全</a>
+                                </li>
+                                <li>
+                                    <a href=" https://www.jixian.net/article/article_23493.html">百亩花海迎国庆
+                                        京津国色天香牡丹园开启秋游季</a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a
+                                        href="http://www.dzwww.com/xinwen/guoneixinwen/201909/t20190926_19214586.htm">国庆假期出游谨防“低价团”等消费陷阱</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="http://www.xinhuanet.com/enterprise/2019-09/27/c_1125047828.htm">OYO酒店大数据告诉你“十一”出游“关键词”</a>
+                                </li>
+                                <li>
+                                    <a href="https://bj.jjj.qq.com/a/20190926/002558.htm">丰收的锣，敲响了！顺义丰收节活动持续至10月7日</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="http://www.bj.xinhuanet.com/bjyw/2019-09/25/c_1125039346.htm">北海公园万佛楼和大佛殿遗址将对外开放</a>
+                                </li>
+                                <li>
+                                    <a href="http://travel.people.com.cn/n1/2019/0925/c41570-31372752.html">国庆出游趋势：民宿迎最旺季
+                                        景区夜间消费掀热潮</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="http://ah.sina.cn/news/2019-09-27/detail-iicezueu8643216.d.html?cre=tianyi&mod=whome&loc=7&r=25&rfunc=3&tj=cx_wap_whome&tr=188&vt=4&pos=108&his=0">国庆假期继续免收7座及以下小型客车通行费</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightcolumn">
+                <div class="card">
+                    <h2>周边天气</h2>
+                    <ul class="right" id="surrounding_weather">
+                        <!-- <li class="headerLine"><span class="view">地区</span><span>天气</span><span>气温</span></li>
+                        <li class="firstLine"><span class="view">和平区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">河东区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">河西区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">南开区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">河北区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">红桥区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">东丽区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">西青区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">津南区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">北辰区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">武清区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">宝坻区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">滨海新区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">宁河区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">静海区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">蓟州区</span><span>多云转阴</span><span>17 ~ 30℃</span></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>
+                <span>相关链接：</span>
+                <a target="_blank" href="http://www.cma.gov.cn/">中国气象局</a>
+                <a target="_blank" href="http://www.chinamsa.org">中国气象服务协会</a>
+                <a target="_blank" href="http://www.weathertv.cn/">中国天气频道</a>
+                <a target="_blank" href="http://www.xn121.com/">中国天气网</a>
+            </p>
+            <hr>
+            <p>Copyright &copy; 2019.和煦天气网 All rights reserved</p>
+        </div>
+    </div>
+
+</body>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/banner.js"></script>
+<script src="/static/js/travel.js"></script>
+<script src="/static/js/common.js"></script>
+<script>
+
+    $(function () {
+        showBanner();
+
+        //------------------------------------------------------
+        //                      周边天气                      
+        //------------------------------------------------------
+
+        // 1.查找本地存储是否有定位信息
+        if (localStorage.getItem("location")) {
+            // 2.如果有就直接发请求获取
+            write_surrounding_weather();
+        } else {
+            // 3.如果没有,则程序获取用户定位信息,之后再发请求获取
+            getLocation({ myfunc: write_surrounding_weather })
+        }
+
+
+
+
+
+    })
+
+
+</script>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+	<title>Home</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script
+		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all" />
+	<script src="/static/js/jquery.min.js"></script>
+
+</head>
+
+<body onload="startTime()">
+
+	<div class="header">
+		<h1 class="indexLogo">和煦天气</h1>
+		<div class="indexNvl">
+			<span class="nvl"><a href="/index">首页</a></span>
+			<span class="nvl"><a href="/weather">天气</a></span>
+			<span class="nvl"><a href="/news">资讯</a></span>
+			<span class="nvl"><a href="/trip">出行</a></span>
+			<span class="nvl"><a href="/travel">旅游</a></span>
+			<span class="nvlLR">
+				<span><a href="/login">登录</a></span>/
+				<span><a href="/register">注册</a></span>
+			</span>
+		</div>
+	</div>
+	<div class="container">
+		<div class="city">
+			<div class="title">
+				<!-- <h2></h2>
+				<h3></h3>
+				<img src="/static/images/u30.png" alt=""> -->
+			</div>
+			<div class="date-time">
+				<div class="dmy">
+					<div id="txt"></div>
+					<div class="date">
+						<!-- Date-JavaScript -->
+						<script type="text/javascript">
+							var mydate = new Date()
+							var year = mydate.getYear()
+							if (year < 1000)
+								year += 1900
+							var day = mydate.getDay()
+							var month = mydate.getMonth()
+							var daym = mydate.getDate()
+							if (daym < 10)
+								daym = "0" + daym
+							var dayarray = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六")
+							var montharray = new Array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12")
+							document.write(year + "年" + montharray[month] + "月" + daym + "日 " + dayarray[day] + "")
+						</script>
+					</div>
+				</div>
+				<div class="temperature">
+					<p></p>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="forecast">
+			<div class="forecast-icon">
+				<img src="/static/images/forecast.png" alt="New York Weather Widget">
+			</div>
+			<div class="today-weather">
+				<h3></h3>
+				<ul>
+					<!-- <li>Now <span> 20°C</span></li>
+					<li>09:00 <span> 22°C</span></li>
+					<li>12:00 <span> 24°C</span></li>
+					<li>15:00 <span> 23°C</span></li>
+					<li>18:00 <span> 20°C</span></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+
+	</div>
+
+	<div class="footer">
+		<div class="copyright">
+			<p>Copyright &copy; 2019.和煦天气网 All rights reserved</p>
+		</div>
+	</div>
+
+
+	<script src="/static/js/common.js"></script>
+	<script>
+		function startTime() {
+			var today = new Date();
+			var h = today.getHours();
+			var m = today.getMinutes();
+			var s = today.getSeconds();
+			m = checkTime(m);
+			s = checkTime(s);
+			document.getElementById('txt').innerHTML =
+				h + ":" + m + ":" + s;
+			var t = setTimeout(startTime, 500);
+		}
+		function checkTime(i) {
+			if (i < 10) { i = "0" + i };
+			return i;
+		}
+
+		// 渲染定位信息
+		function showLocation() {
+			var $location_list = localStorage.getItem("location").split(',');
+			var location_box = $(".container .city .title")
+			var box_html = ''
+			box_html += '<h2>'
+			box_html += $location_list[0]
+			box_html += '，'
+			box_html += $location_list[1]
+			box_html += '</h2><h3>'
+			box_html += $location_list[2]
+			box_html += '</h3><img src="/static/images/u30.png" alt="">'
+
+			location_box.html(box_html)
+		}
+		// 渲染天气信息
+		function showTemperatures() {
+			var $location = localStorage.getItem("location");
+			var request_url = "http://127.0.0.1:8000/api/v1/weather/" + $location + "?index=1"
+			$.ajax({
+				// 请求方式
+				type: "get",
+				url: request_url,
+				// result 为请求的返回结果对象
+				// success: function (result) {
+				// 	// ~~~~~~~~~~~~~~~~~~~~~~~todo~~~~~~~~~~~~~~~~~~~~~~~~//
+				// 	if (200 == result.code) {
+				// 	} else {
+				// 		alert(result.error)
+				// 	}
+				// },
+				beforeSend: function (request) {
+					result = {
+						'code': 200,
+						'data': {
+							'weather': '阴天',
+							'temperature': {
+								'time': ['now', '19:00', '20:00', '21:00', '22:00'],
+								'temp': [4, 5, 7, 9, 4]
+							}
+						}
+					}
+					if (200 == result.code) {
+						// 20°<span>C</span>
+						var temperature_tag = $(".container .city .date-time .temperature p")
+						var weather_tag = $(".container .forecast .today-weather")
+						var ul_html = ""
+
+						temperature_tag.html(result.data.temperature.temp[0] + "°<span>C</span>")
+						weather_tag.children("h3").text(result.data.weather)
+						for (var i = 0; i <= 4; i++) {
+							ul_html += "<li>" + result.data.temperature.time[i] + " <span> " + result.data.temperature.temp[i] + "°C</span></li>"
+						}
+						weather_tag.children("ul").html(ul_html)
+					} else {
+						alert(result.error)
+					}
+				},
+				error: function (result) {
+					console.log('天气数据请求失败')
+				}
+			});
+		}
+
+		$(function () {
+			//---------------------------------------------------------------------------------------//
+			//                                                             用户定位                                                        //
+			//---------------------------------------------------------------------------------------//
+			// localStorage.setItem("location", "天津,天津,河西");
+			// 1.查找本地存储是否有定位信息
+			if (localStorage.getItem("location")) {
+				// 2.如果有直接解析渲染页面
+				showLocation()
+			} else {
+				// 3.如果没有，则程序获取用户定位
+				getLocation({myfunc:showLocation})
+			}
+
+			//---------------------------------------------------------------------------------------//
+			//                                                             天气数据                                                        //
+			//---------------------------------------------------------------------------------------//
+			// 首页天气数据接口	
+			if(localStorage.getItem("location")){
+				showTemperatures()
+			}else{
+				getLocation({myfunc:showTemperatures})
+			}
+
+		})
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>出行</title>
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/trip.css">
+    <link href="http://api.map.baidu.com/library/TrafficControl/1.4/src/TrafficControl_min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="logo">和煦天气</h1>
+            <div class="searchBox">
+                <form>
+                    <input type="text" onfocus="this.value = '';" placeholder="输入城市、区县、景点名称 查天气" }"><input type="submit"
+                        value="">
+                </form>
+            </div>
+
+            <ul class="topNav">
+                <li>
+                    <a href="/index">首页</a>
+                </li>
+                <li>
+                    <a href="/weather">天气</a>
+                </li>
+                <li>
+                    <a href="/news">资讯</a>
+                </li>
+                <li>
+                    <a href="/trip">出行</a>
+                </li>
+                <li>
+                    <a href="/travel">旅游</a>
+                </li>
+            </ul>
+            <ul class="topLR">
+                <li>
+                    <a href="/login">登录</a>/
+                    <a href="/register">注册</a>
+                </li>
+            </ul>
+            <div class="active_dp">
+                <p>
+                    <span><a href="/index">首页</a></span>
+                    >>
+                    <span>出行</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="c-banner">
+                <div class="banner">
+                    <ul>
+                        <li><img src="/static/images/u225_state1.png"></li>
+                        <li><img src="/static/images/u225_state1.png"></li>
+                        <li><img src="/static/images/u225_state1.png"></li>
+                    </ul>
+                </div>
+                <div class="nexImg">
+                    <img src="/static/images/nexImg.png" />
+                </div>
+                <div class="preImg">
+                    <img src="/static/images/preImg.png" />
+                </div>
+                <div class="jumpBtn">
+                    <ul>
+                        <li jumpImg="0"></li>
+                        <li jumpImg="1"></li>
+                        <li jumpImg="2"></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="leftcolumn">
+                <div class="card" id="tripMap">
+                    <h2>实时路况</h2>
+                    <div id="allmap"></div>
+                </div>
+                <div class="card">
+                    <h2>交通资讯</h2>
+                    <ul class="new_ul">
+                        <li class="fl">
+                            <a href="javascript:void(0);" onclick="swap_infopage('test_new_id')">
+                            <div class="box">
+                                <figure >
+                                    <img src="/static/images/architecture-buildings-city-373893.jpg" alt="">
+                                </figure>
+                                <div class="tip">
+                                        <h3>2019年天津市国庆出行报告</h3>
+                                        <p>2019年10月10日 22:40</p>
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                            <a href="javascript:void(0);" onclick="swap_infopage('test_new_id')">
+                            <div class="box">
+                                <figure >
+                                    <img src="/static/images/architecture-buildings-city-373893.jpg" alt="">
+                                </figure>
+                                <div class="tip">
+                                        <h3>2019年天津市国庆出行报告</h3>
+                                        <p>2019年10月10日 22:40</p>
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                            <a href="javascript:void(0);" onclick="swap_infopage('test_new_id')">
+                            <div class="box">
+                                <figure >
+                                    <img src="/static/images/architecture-buildings-city-373893.jpg" alt="">
+                                </figure>
+                                <div class="tip">
+                                        <h3>2019年天津市国庆出行报告</h3>
+                                        <p>2019年10月10日 22:40</p>
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightcolumn">
+                <div class="card">
+                    <h2>周边旅游</h2>
+                    <a class="more" href="travel.html">更多>></a>
+                    <ul class="right" id="surrounding_tour">
+                        <!-- <li class="headerLine"><span class="view">景点</span><span>天气</span><span>气温</span></li>
+                        <li class="firstLine"><span class="view">天津之眼</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">意式风情街</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">古文化街</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">五大道</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">瓷房子</span><span>多云转阴</span><span>17 ~ 30℃</span></li> -->
+                    </ul>
+                </div>
+                <div class="card">
+                    <h2>周边天气</h2>
+                    <ul class="right" id="surrounding_weather">
+                        <!-- <li class="headerLine"><span class="view">地区</span><span>天气</span><span>气温</span></li>
+                        <li class="firstLine"><span class="view">和平区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">河东区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">河西区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">南开区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">河北区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">红桥区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">东丽区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">西青区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">津南区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">北辰区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">武清区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">宝坻区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">滨海新区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">宁河区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">静海区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">蓟州区</span><span>多云转阴</span><span>17 ~ 30℃</span></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>
+                <span>相关链接：</span>
+                <a target="_blank" href="http://www.cma.gov.cn/">中国气象局</a>
+                <a target="_blank" href="http://www.chinamsa.org">中国气象服务协会</a>
+                <a target="_blank" href="http://www.weathertv.cn/">中国天气频道</a>
+                <a target="_blank" href="http://www.xn121.com/">中国天气网</a>
+            </p>
+            <hr>
+            <p>Copyright &copy; 2019.和煦天气网 All rights reserved</p>
+        </div>
+    </div>
+
+</body>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/banner.js"></script>
+<script>showBanner();</script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=2oxWMqZV5lSUHwgCRMm2HG5HLiqfyDOS"></script>
+<script src="http://api.map.baidu.com/library/TrafficControl/1.4/src/TrafficControl_min.js"></script>
+<script src="/static/js/trip.js"></script>
+<script src="/static/js/common.js?ver=1"></script>
+<script>
+
+    $(function () {
+
+        //------------------------------------------------------
+        //                      周边天气                      
+        //------------------------------------------------------
+
+        // 1.查找本地存储是否有定位信息
+        if (localStorage.getItem("location")) {
+            // 2.如果有就直接发请求获取
+            write_surrounding_weather();
+        } else {
+            // 3.如果没有,则程序获取用户定位信息,之后再发请求获取
+            getLocation({ myfunc: write_surrounding_weather })
+        }
+
+        //------------------------------------------------------
+        //                      周边景点                      
+        //------------------------------------------------------
+
+        // 1.查找本地存储是否有定位信息
+        if (localStorage.getItem("location")) {
+            // 2.如果有就直接发请求获取
+            write_surrounding_tour();
+        } else {
+            // 3.如果没有,则程序获取用户定位信息,之后再发请求获取
+            getLocation({ myfunc: write_surrounding_tour })
+        }
+
+
+
+    })
+
+
+</script>
+</html>

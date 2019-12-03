@@ -1,0 +1,425 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Sat Nov  2 16:17:01 2019] ***
+compiled with version: 7.4.0 on 24 October 2019 09:03:16
+os: Linux-5.0.0-32-generic #34~18.04.2-Ubuntu SMP Thu Oct 10 10:36:02 UTC 2019
+nodename: tarena
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+your processes number limit is 31187
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:5000).
+bind(): Address already in use [core/socket.c line 769]
+*** Starting uWSGI 2.0.18 (64bit) on [Sat Nov  2 16:21:12 2019] ***
+compiled with version: 7.4.0 on 24 October 2019 09:03:16
+os: Linux-5.0.0-32-generic #34~18.04.2-Ubuntu SMP Thu Oct 10 10:36:02 UTC 2019
+nodename: tarena
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+your processes number limit is 31187
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:5000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:42483 (port auto-assigned) fd 3
+Python version: 3.6.8 (default, Oct  7 2019, 12:59:55)  [GCC 8.3.0]
+Python main interpreter initialized at 0x55a7fdffee30
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 166688 bytes (162 KB) for 2 cores
+*** Operational MODE: threaded ***
+unable to find "application" callable in file flask_client.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 14701)
+spawned uWSGI worker 1 (pid: 14703, cores: 2)
+spawned uWSGI http 1 (pid: 14704)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/1] 172.86.140.66 () {36 vars in 568 bytes} [Sat Nov  2 16:21:31 2019] GET /trip => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/2] 172.86.140.66 () {34 vars in 498 bytes} [Sat Nov  2 16:21:31 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/3] 172.86.140.66 () {38 vars in 599 bytes} [Sat Nov  2 16:21:35 2019] GET /trip => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/4] 172.86.140.66 () {38 vars in 599 bytes} [Sat Nov  2 16:21:36 2019] GET /trip => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/5] 172.86.140.66 () {38 vars in 599 bytes} [Sat Nov  2 16:21:36 2019] GET /trip => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/6] 172.86.140.66 () {38 vars in 599 bytes} [Sat Nov  2 16:21:36 2019] GET /trip => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/7] 172.86.140.66 () {38 vars in 599 bytes} [Sat Nov  2 16:21:37 2019] GET /trip => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/8] 172.86.140.66 () {36 vars in 570 bytes} [Sat Nov  2 16:21:42 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/9] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:21:50 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/10] 172.86.140.66 () {38 vars in 551 bytes} [Sat Nov  2 16:21:50 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/11] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:21:52 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/12] 172.86.140.66 () {38 vars in 551 bytes} [Sat Nov  2 16:21:52 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+*** Starting uWSGI 2.0.18 (64bit) on [Sat Nov  2 16:23:33 2019] ***
+compiled with version: 7.4.0 on 24 October 2019 09:03:16
+os: Linux-5.0.0-32-generic #34~18.04.2-Ubuntu SMP Thu Oct 10 10:36:02 UTC 2019
+nodename: tarena
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+your processes number limit is 31187
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:5000).
+bind(): Address already in use [core/socket.c line 769]
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/13] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:23:50 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/14] 172.86.140.66 () {38 vars in 551 bytes} [Sat Nov  2 16:23:50 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/15] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:23:51 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/16] 172.86.140.66 () {38 vars in 551 bytes} [Sat Nov  2 16:23:51 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/17] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:23:52 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/18] 172.86.140.66 () {38 vars in 551 bytes} [Sat Nov  2 16:23:52 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/19] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:23:53 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/20] 172.86.140.66 () {38 vars in 551 bytes} [Sat Nov  2 16:23:53 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/21] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:23:53 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/22] 172.86.140.66 () {38 vars in 551 bytes} [Sat Nov  2 16:23:53 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/23] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:23:54 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/24] 172.86.140.66 () {38 vars in 551 bytes} [Sat Nov  2 16:23:54 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/25] 172.86.140.66 () {40 vars in 622 bytes} [Sat Nov  2 16:25:19 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/26] 172.86.140.66 () {38 vars in 550 bytes} [Sat Nov  2 16:25:19 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/27] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:25:38 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/28] 127.0.0.1 () {38 vars in 543 bytes} [Sat Nov  2 16:25:38 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/29] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:25:40 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/30] 127.0.0.1 () {38 vars in 543 bytes} [Sat Nov  2 16:25:40 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/31] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:25:42 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/32] 127.0.0.1 () {38 vars in 543 bytes} [Sat Nov  2 16:25:42 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/33] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:25:42 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/34] 127.0.0.1 () {38 vars in 543 bytes} [Sat Nov  2 16:25:43 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/35] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:25:43 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/36] 127.0.0.1 () {38 vars in 543 bytes} [Sat Nov  2 16:25:43 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/37] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:25:44 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/38] 127.0.0.1 () {38 vars in 543 bytes} [Sat Nov  2 16:25:44 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/39] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:25:44 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/40] 127.0.0.1 () {38 vars in 543 bytes} [Sat Nov  2 16:25:45 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/41] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:25:45 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14703|app: -1|req: -1/42] 127.0.0.1 () {38 vars in 543 bytes} [Sat Nov  2 16:25:45 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+*** Starting uWSGI 2.0.18 (64bit) on [Sat Nov  2 16:26:55 2019] ***
+compiled with version: 7.4.0 on 24 October 2019 09:03:16
+os: Linux-5.0.0-32-generic #34~18.04.2-Ubuntu SMP Thu Oct 10 10:36:02 UTC 2019
+nodename: tarena
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+your processes number limit is 31187
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:5000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:42367 (port auto-assigned) fd 3
+Python version: 3.6.8 (default, Oct  7 2019, 12:59:55)  [GCC 8.3.0]
+Python main interpreter initialized at 0x55d2156b1e30
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 166688 bytes (162 KB) for 2 cores
+*** Operational MODE: threaded ***
+unable to find "application" callable in file flask_client.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 14790)
+spawned uWSGI worker 1 (pid: 14794, cores: 2)
+spawned uWSGI http 1 (pid: 14795)
+--- no python application found, check your startup logs for errors ---
+[pid: 14794|app: -1|req: -1/1] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:27:01 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14794|app: -1|req: -1/2] 127.0.0.1 () {38 vars in 543 bytes} [Sat Nov  2 16:27:01 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14794|app: -1|req: -1/3] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:27:02 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14794|app: -1|req: -1/4] 127.0.0.1 () {38 vars in 543 bytes} [Sat Nov  2 16:27:02 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14794|app: -1|req: -1/5] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:27:04 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14794|app: -1|req: -1/6] 127.0.0.1 () {38 vars in 543 bytes} [Sat Nov  2 16:27:04 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14794|app: -1|req: -1/7] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:27:06 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14794|app: -1|req: -1/8] 127.0.0.1 () {38 vars in 543 bytes} [Sat Nov  2 16:27:06 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14794|app: -1|req: -1/9] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:27:07 2019] GET /index => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14794|app: -1|req: -1/10] 127.0.0.1 () {38 vars in 543 bytes} [Sat Nov  2 16:27:08 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+*** Starting uWSGI 2.0.18 (64bit) on [Sat Nov  2 16:30:02 2019] ***
+compiled with version: 7.4.0 on 24 October 2019 09:03:16
+os: Linux-5.0.0-32-generic #34~18.04.2-Ubuntu SMP Thu Oct 10 10:36:02 UTC 2019
+nodename: tarena
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+your processes number limit is 31187
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:5000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:43013 (port auto-assigned) fd 3
+Python version: 3.6.8 (default, Oct  7 2019, 12:59:55)  [GCC 8.3.0]
+Python main interpreter initialized at 0x55e9e70de000
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 166688 bytes (162 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55e9e70de000 pid: 14868 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 14868)
+spawned uWSGI worker 1 (pid: 14871, cores: 2)
+spawned uWSGI http 1 (pid: 14872)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:13 2019] GET /index => generated 0 bytes in 39 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:13 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:13 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:13 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 5/5] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:13 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:13 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 7/7] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:13 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 8/8] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:13 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 9/9] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:13 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 10/10] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:13 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 11/11] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:15 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 12/12] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:15 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 13/13] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:15 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 14/14] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:15 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 15/15] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:15 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 16/16] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:15 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 17/17] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:15 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 18/18] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:15 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 19/19] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:15 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 20/20] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:15 2019] GET /index => generated 0 bytes in 2 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 21/21] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:17 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 22/22] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:17 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 23/23] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:17 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 24/24] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:17 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 25/25] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:17 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 26/26] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:17 2019] GET /index => generated 0 bytes in 1 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 27/27] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:17 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 28/28] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:17 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 29/29] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:17 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 30/30] 127.0.0.1 () {40 vars in 615 bytes} [Sat Nov  2 16:30:17 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 31/31] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:30:21 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 32/32] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:30:21 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 33/33] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:30:21 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 34/34] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:30:21 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 35/35] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:30:21 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 36/36] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:30:21 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 37/37] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:30:21 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 38/38] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:30:21 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 39/39] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:30:21 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: weather() takes 0 positional arguments but 2 were given
+[pid: 14871|app: 0|req: 40/40] 172.86.140.66 () {40 vars in 623 bytes} [Sat Nov  2 16:30:21 2019] GET /index => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Sat Nov  2 16:31:55 2019] ***
+compiled with version: 7.4.0 on 24 October 2019 09:03:16
+os: Linux-5.0.0-32-generic #34~18.04.2-Ubuntu SMP Thu Oct 10 10:36:02 UTC 2019
+nodename: tarena
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+your processes number limit is 31187
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+Python version: 3.6.8 (default, Oct  7 2019, 12:59:55)  [GCC 8.3.0]
+Python main interpreter initialized at 0x5588f12827f0
+python threads support enabled
+The -s/--socket option is missing and stdin is not a socket.
+*** Starting uWSGI 2.0.18 (64bit) on [Sat Nov  2 16:32:03 2019] ***
+compiled with version: 7.4.0 on 24 October 2019 09:03:16
+os: Linux-5.0.0-32-generic #34~18.04.2-Ubuntu SMP Thu Oct 10 10:36:02 UTC 2019
+nodename: tarena
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+your processes number limit is 31187
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+Python version: 3.6.8 (default, Oct  7 2019, 12:59:55)  [GCC 8.3.0]
+Python main interpreter initialized at 0x55d678e717f0
+python threads support enabled
+The -s/--socket option is missing and stdin is not a socket.
+*** Starting uWSGI 2.0.18 (64bit) on [Sat Nov  2 16:34:45 2019] ***
+compiled with version: 7.4.0 on 24 October 2019 09:03:16
+os: Linux-5.0.0-32-generic #34~18.04.2-Ubuntu SMP Thu Oct 10 10:36:02 UTC 2019
+nodename: tarena
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+your processes number limit is 31187
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+Python version: 3.6.8 (default, Oct  7 2019, 12:59:55)  [GCC 8.3.0]
+Python main interpreter initialized at 0x5600a0d107f0
+python threads support enabled
+The -s/--socket option is missing and stdin is not a socket.
+*** Starting uWSGI 2.0.18 (64bit) on [Sat Nov  2 16:41:45 2019] ***
+compiled with version: 7.4.0 on 24 October 2019 09:03:16
+os: Linux-5.0.0-32-generic #34~18.04.2-Ubuntu SMP Thu Oct 10 10:36:02 UTC 2019
+nodename: tarena
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/tarena/Bruce/00_AID1907_MyNote/team_project/team_project/weather_client
+your processes number limit is 31187
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:5000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:44529 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Oct  7 2019, 12:59:55)  [GCC 8.3.0]
+Python main interpreter initialized at 0x5627da1714e0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 166688 bytes (162 KB) for 2 cores
+*** Operational MODE: threaded ***
+unable to find "application" callable in file flask_client.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 15131)
+spawned uWSGI worker 1 (pid: 15134, cores: 2)
+spawned uWSGI http 1 (pid: 15135)
+--- no python application found, check your startup logs for errors ---
+[pid: 15134|app: -1|req: -1/1] 172.86.140.66 () {34 vars in 498 bytes} [Sat Nov  2 16:42:40 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)

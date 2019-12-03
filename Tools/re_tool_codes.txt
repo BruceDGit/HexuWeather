@@ -1,0 +1,20 @@
+(1)将desc tablename; 的查询结果字段取出,以逗号分割
+code:
+	\|\s(\S*)\s.*\|\n?   -->  $1,
+# format like this:
+before:
+	| content    | text         | YES  |     | NULL    |                |
+	| author     | varchar(64)  | YES  |     | NULL    |                |
+	| imgurl     | varchar(512) | YES  |     | NULL    |                |
+	| part       | text         | YES  |     | NULL    |                |
+after:
+	content,author,imgurl,part,
+
+(2)将Ajax测试代码的beforeSend批量替换成success函数
+code:
+	beforeSend(:.*function.*)request  -->  success$1result
+format like this:
+	# before:
+	beforeSend: function (request)
+	# after:
+	success: function (result)

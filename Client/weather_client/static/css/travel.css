@@ -1,0 +1,322 @@
+.travel {
+	width: 800px;
+}
+
+.tral_top {
+	width: 100%
+}
+
+.tral_top .tral_title {
+	display: flex;
+	height: 2.5rem;
+	border-bottom: 0.1rem solid #ddd;
+	line-height: 2.5rem ;
+	justify-content: space-between;
+}
+
+.tral_top .content {
+	overflow: hidden;
+	width: 100%;
+}
+
+.tral_top .content ul {
+	margin: 0 auto;
+	margin-top: 22px;
+	padding: 0;
+	width: 100%;
+}
+
+.tral_top .content ul li {
+	overflow: hidden;
+	padding: 0;
+	width: 100%;
+	list-style: none;
+	text-align: center;
+}
+
+.tral_top .content ul li a {
+	float: left;
+	overflow: hidden;
+	margin: 0%;
+	padding: 0%;
+	width: 20%;
+	height: 150px;
+}
+
+.tral_top .content ul li img {
+	margin: 0%;
+	padding: 0%;
+	width: 94%;
+	height: 60%;
+	border: solid 1px #bbb;
+}
+
+.tral_top .content ul li p {
+	margin: 10px auto;
+	padding: 0%;
+	font-size: 14px;
+}
+
+.tral_title {
+	float: right;
+	padding-bottom: 0.7rem;
+	font-size: 14px;
+}
+
+.bottom .content ul {
+	float: left;
+	margin: 8px auto;
+	padding: 0%;
+	padding-left: 20px;
+	width: 100%;
+}
+
+.bottom .content ul li {
+	margin: 10px auto;
+	list-style: none;
+}
+
+.bottom .content ul li:first-child a {
+	font-weight: 900;
+	font-size: 16px;
+}
+
+.bottom .content ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.box * {
+	margin: 0;
+	padding: 0;
+}
+
+.box {
+	margin: 0;
+	width: 720px;
+	height: 100%;
+}
+
+.box .box-title {
+	height: 40px;
+	background-color: rgba(188, 188, 188);
+	border-bottom: 1px solid #fff;
+}
+
+.box .box-title p {
+	padding-top: 10px;
+	padding-left: 35px;
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.box-main {
+	height: 224px;
+}
+
+.box-main .left {
+	float: left;
+	margin-top: 10px;
+	margin-left: 30px;
+	width: 215px;
+	height: 215px;
+}
+
+.box-main .left img {
+	width: 100%;
+	height: 100%;
+}
+
+.box-main .right {
+	display: inline-block;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+
+.box-main ul li {
+	margin-bottom: 6px;
+	list-style-type: none;
+}
+
+.box-main ul li:first-child a {
+	font-weight: 1000;
+}
+
+.box-main ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.weatherNewsBanner {
+	position: relative;
+	overflow: hidden;
+	padding: 0;
+	width: 100%;
+}
+
+.weatherNewsBanner img {
+	width: 100%;
+}
+
+.weatherNewsBanner .banner ul {
+	margin-bottom: 0px;
+	padding-left: 0px;
+	list-style: none;
+}
+
+.weatherNewsBanner .banner ul li {
+	display: none;
+	opacity: 0;
+}
+
+.weatherNewsBanner .banner ul li:nth-child(1) {
+	display: block;
+	opacity: 1;
+}
+
+.weatherNewsBanner .banner ul li img {
+	top: 0px;
+	width: 100%;
+}
+
+.weatherNewsBanner .jumpBtn {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 24px;
+	background-color: rgba(8, 8, 8, 0.6);
+	text-align: center;
+	line-height: 24px;
+}
+
+.weatherNewsBanner .jumpBtn h6 {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	padding-right: 8px;
+	width: 150px;
+	color: white;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.weatherNewsBanner .jumpBtn ul {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	display: flex;
+	margin-top: -7px;
+	padding: 0;
+	height: 14px;
+	text-align: center;
+}
+
+.weatherNewsBanner .jumpBtn ul li {
+	display: inline-block;
+	margin-right: 3px;
+	width: 14px;
+	height: 14px;
+	background-color: #666;
+	color: white;
+	font-size: 8px;
+	line-height: 14px;
+	cursor: pointer;
+}
+
+.weatherNewsBanner .jumpBtn ul li:first-child {
+	margin-left: 0px;
+}
+
+/* ----------------tral_info begin------------------ */
+
+.trav_bottom {
+    width: 100%;
+    height: 210px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 0;
+	overflow: hidden;
+	font: 12px Arial,"Microsoft Yahei";
+	margin-bottom: 16px;
+}
+
+.trav_scrollY {
+    width: 100%;
+    overflow: hidden;
+}
+
+.trav_scrollY ul{
+	display: inline-block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    z-index: 9;
+    left: 0;
+	top: 0;
+	padding-left: 15px;
+	
+}
+
+.trav_scrollY ul li{
+	display: block;
+    width: 12%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    margin-right: 15px;
+    background: rgba(0,0,0,0.2);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
+	color: #fff;
+	list-style-type: none;
+
+}
+
+.trav_scrollY ul li p{
+	width: 100%;
+    text-align: center;
+    padding: 6px 0 6px 0;
+    font-size: 16px;
+}
+
+.trav_scrollY ul li h3{
+	width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+    color: rgba(255,255,255,0.8);
+    font-size: 16px;
+}
+
+.trav_weather{
+	width: 100%;
+    height: auto;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    padding: 5px 0 6px 0;
+	background: transparent;
+	margin: 0;
+	display: block;
+}
+
+.trav_temp{
+	width: 100%;
+    text-align: center;
+	display: block;
+	margin: 0;
+	padding: 0;
+	font: 14px Arial,"Microsoft Yahei";
+	list-style: none;
+}
+
+#tral_getback{
+	float:right;
+	text-decoration: none;
+	/* color: none; */
+}
+
+
+/* ----------------tral_info end------------------ */

@@ -1,0 +1,171 @@
+.box * {
+	margin: 0;
+	padding: 0;
+}
+
+.box {
+	margin: 0;
+	width: 45pc;
+	height: 100%;
+}
+
+.box .box-title {
+	height: 40px;
+	border-bottom: 1px solid #fff;
+	background-color: #bcbcbc;
+}
+
+.box .box-title p {
+	padding-top: 10px;
+	padding-left: 35px;
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.box-main {
+	height: 14pc;
+}
+
+.box-main .left {
+	float: left;
+	margin-top: 10px;
+	margin-left: 30px;
+	width: 215px;
+	height: 215px;
+}
+
+.box-main .left img {
+	width: 100%;
+	height: 100%;
+}
+
+.box-main .right {
+	display: inline-block;
+	margin-top: 10px;
+	margin-left: 30px;
+}
+
+.box-main ul li {
+	margin-bottom: 15px;
+	list-style-type: none;
+}
+
+.box-main ul li:first-child a {
+	font-weight: 900;
+}
+
+.box-main ul li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.weatherNewsBanner {
+	position: relative;
+	overflow: hidden;
+	padding: 0;
+	width: 100%;
+}
+
+.weatherNewsBanner img {
+	width: 100%;
+}
+
+.weatherNewsBanner .banner ul {
+	margin-bottom: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+.weatherNewsBanner .banner ul li {
+	display: none;
+	opacity: 0;
+}
+
+.weatherNewsBanner .banner ul li:nth-child(1) {
+	display: block;
+	opacity: 1;
+}
+
+.weatherNewsBanner .banner ul li img {
+	top: 0;
+	width: 100%;
+}
+
+.weatherNewsBanner .jumpBtn {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 24px;
+	background-color: rgba(8,8,8,.6);
+	text-align: center;
+	line-height: 24px;
+}
+
+.weatherNewsBanner .jumpBtn h6 {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	padding-right: 8px;
+	width: 150px;
+	color: #fff;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.weatherNewsBanner .jumpBtn ul {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	display: flex;
+	margin-top: -7px;
+	padding: 0;
+	height: 14px;
+	text-align: center;
+}
+
+.weatherNewsBanner .jumpBtn ul li {
+	display: inline-block;
+	margin-right: 3px;
+	width: 14px;
+	height: 14px;
+	background-color: #666;
+	color: #fff;
+	font-size: 8px;
+	line-height: 14px;
+	cursor: pointer;
+}
+
+.weatherNewsBanner .jumpBtn ul li:first-child {
+	margin-left: 0;
+}
+
+.tral_title {
+	float: right;
+	padding-bottom: .7rem;
+	font-size: 14px;
+}
+
+.bottom .content ul {
+	float: left;
+	margin: 8px auto;
+	padding: 0;
+	padding-left: 20px;
+	width: 100%;
+}
+
+.bottom .content ul li {
+	margin: 10px auto;
+	list-style: none;
+}
+
+.bottom .content ul li:first-child a {
+	font-weight: 900;
+	font-size: 1pc;
+}
+
+.bottom .content ul li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 14px;
+}

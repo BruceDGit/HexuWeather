@@ -1,0 +1,301 @@
+error:'basic' 2019-11-28 19:23:16 
+error:'basic' 2019-11-28 19:23:43 
+error:'basic' 2019-11-28 19:50:58 
+error:'basic' 2019-11-28 19:51:18 
+error:'basic' 2019-11-28 19:51:36 
+error:'basic' 2019-11-28 19:52:22 
+error:'basic' 2019-11-28 19:53:40 
+error:'basic' 2019-11-28 19:54:59 
+error:'basic' 2019-11-28 19:55:42 
+error:'basic' 2019-11-28 19:56:48 
+error:'basic' 2019-11-28 19:58:06 
+error:'basic' 2019-11-28 19:58:07 
+error:'basic' 2019-11-28 20:15:44 
+insert succeed at 2019-11-28 20:18:06 
+error:list indices must be integers or slices, not str 2019-11-28 20:34:57 
+error:'basic' 2019-11-28 21:14:13 
+error:'basic' 2019-11-28 21:14:25 
+error:'basic' 2019-11-28 21:23:04 
+error:'basic' 2019-11-28 21:23:10 
+insert succeed at 2019-11-28 21:23:26 
+insert succeed at 2019-11-28 22:10:33 
+insert succeed at 2019-11-28 22:11:07 
+
+
+
+
+
+Traceback (most recent call last):
+  File "/home/tarena/Bruce/CityWeather/111/weather_now_insert.py", line 6, in <module>
+    import json,pymysql
+ModuleNotFoundError: No module named 'pymysql'
+Traceback (most recent call last):
+  File "/home/tarena/Bruce/CityWeather/111/weather_now_insert.py", line 6, in <module>
+    import json,pymysql
+ModuleNotFoundError: No module named 'pymysql'
+bash: */20: 没有那个文件或目录
+Traceback (most recent call last):
+  File "/home/tarena/Bruce/CityWeather/111/weather_now_insert.py", line 65, in <module>
+    with open('./log/weather_now_insert.log' , 'a') as f:
+FileNotFoundError: [Errno 2] No such file or directory: './log/weather_now_insert.log'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tarena/Bruce/CityWeather/111/weather_now_insert.py", line 68, in <module>
+    with open('./log/weather_now_insert.log' , 'a') as f:
+FileNotFoundError: [Errno 2] No such file or directory: './log/weather_now_insert.log'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+insert succeed at 2019-11-28 23:57:37 
+
+insert succeed at 2019-11-29 00:20:03 
+
+insert succeed at 2019-11-29 00:40:03 
+
+insert succeed at 2019-11-29 01:00:04 
+
+insert succeed at 2019-11-29 01:20:03 
+
+insert succeed at 2019-11-29 01:40:03 
+
+insert succeed at 2019-11-29 02:00:03 
+
+insert succeed at 2019-11-29 02:20:03 
+
+insert succeed at 2019-11-29 02:40:03 
+
+insert succeed at 2019-11-29 03:00:03 
+
+insert succeed at 2019-11-29 03:20:03 
+
+insert succeed at 2019-11-29 03:40:03 
+
+insert succeed at 2019-11-29 04:00:03 
+
+insert succeed at 2019-11-29 04:20:03 
+
+insert succeed at 2019-11-29 04:40:04 
+
+insert succeed at 2019-11-29 05:00:03 
+
+insert succeed at 2019-11-29 05:20:03 
+
+insert succeed at 2019-11-29 05:40:04 
+
+insert succeed at 2019-11-29 06:00:04 
+
+insert succeed at 2019-11-29 06:20:03 
+
+insert succeed at 2019-11-29 06:40:03 
+
+insert succeed at 2019-11-29 07:00:03 
+
+insert succeed at 2019-11-29 07:20:03 
+
+insert succeed at 2019-11-29 07:40:04 
+
+insert succeed at 2019-11-29 08:00:05 
+
+insert succeed at 2019-11-29 08:20:03 
+
+insert succeed at 2019-11-29 08:40:03 
+
+insert succeed at 2019-11-29 09:00:05 
+
+insert succeed at 2019-11-29 09:20:03 
+
+insert succeed at 2019-11-29 09:40:03 
+
+insert succeed at 2019-11-29 10:00:07 
+
+insert succeed at 2019-11-29 10:20:03 
+
+insert succeed at 2019-11-29 10:40:05 
+
+insert succeed at 2019-11-29 11:00:08 
+
+insert succeed at 2019-11-29 11:20:03 
+
+insert succeed at 2019-11-29 11:40:04 
+
+insert succeed at 2019-11-29 12:00:18 
+
+insert succeed at 2019-11-29 12:20:03 
+
+insert succeed at 2019-11-29 12:40:03 
+
+insert succeed at 2019-11-29 13:00:10 
+
+insert succeed at 2019-11-29 13:20:03 
+
+insert succeed at 2019-11-29 13:40:06 
+
+insert succeed at 2019-11-29 14:00:24 
+
+insert succeed at 2019-11-29 14:20:24 
+
+insert succeed at 2019-11-29 14:40:26 
+
+insert succeed at 2019-11-29 16:00:58 
+
+insert succeed at 2019-11-29 16:20:34 
+
+insert succeed at 2019-11-29 16:40:30 
+
+insert succeed at 2019-11-29 17:00:24 
+
+insert succeed at 2019-11-29 17:20:31 
+
+insert succeed at 2019-11-29 17:40:14 
+
+insert succeed at 2019-11-29 18:00:25 
+
+insert succeed at 2019-11-29 18:20:07 
+
+insert succeed at 2019-11-29 18:40:13 
+
+insert succeed at 2019-11-29 19:00:17 
+
+insert succeed at 2019-11-29 19:20:05 
+
+insert succeed at 2019-11-29 19:40:04 
+
+insert succeed at 2019-11-29 20:00:11 
+
+insert succeed at 2019-11-29 20:20:05 
+
+insert succeed at 2019-11-29 20:40:05 
+
+insert succeed at 2019-11-29 21:40:03 
+
+insert succeed at 2019-11-29 22:00:05 
+
+insert succeed at 2019-11-29 22:20:03 
+
+insert succeed at 2019-11-29 22:40:03 
+
+insert succeed at 2019-11-29 23:00:03 
+
+insert succeed at 2019-11-29 23:20:03 
+
+insert succeed at 2019-11-29 23:40:06 
+
+insert succeed at 2019-11-30 00:00:08 
+
+insert succeed at 2019-11-30 00:20:06 
+
+insert succeed at 2019-11-30 00:40:05 
+
+insert succeed at 2019-11-30 01:00:04 
+
+insert succeed at 2019-11-30 01:20:07 
+
+insert succeed at 2019-11-30 01:40:05 
+
+insert succeed at 2019-11-30 02:00:05 
+
+insert succeed at 2019-11-30 02:20:05 
+
+insert succeed at 2019-11-30 02:40:03 
+
+insert succeed at 2019-11-30 03:00:04 
+
+insert succeed at 2019-11-30 03:20:03 
+
+insert succeed at 2019-11-30 03:40:03 
+
+insert succeed at 2019-11-30 04:00:04 
+
+insert succeed at 2019-11-30 04:20:03 
+
+insert succeed at 2019-11-30 04:40:03 
+
+insert succeed at 2019-11-30 05:00:03 
+
+insert succeed at 2019-11-30 05:20:03 
+
+insert succeed at 2019-11-30 05:40:03 
+
+insert succeed at 2019-11-30 06:00:04 
+
+insert succeed at 2019-11-30 06:20:03 
+
+insert succeed at 2019-11-30 06:40:03 
+
+insert succeed at 2019-11-30 07:00:04 
+
+insert succeed at 2019-11-30 07:20:03 
+
+insert succeed at 2019-11-30 07:40:03 
+
+insert succeed at 2019-11-30 08:00:05 
+
+insert succeed at 2019-11-30 08:20:03 
+
+insert succeed at 2019-11-30 08:40:03 
+
+insert succeed at 2019-11-30 09:00:04 
+
+insert succeed at 2019-11-30 09:20:03 
+
+insert succeed at 2019-11-30 09:40:04 
+
+insert succeed at 2019-11-30 10:00:06 
+
+insert succeed at 2019-11-30 10:20:04 
+
+insert succeed at 2019-11-30 10:40:05 
+
+insert succeed at 2019-11-30 11:00:13 
+
+insert succeed at 2019-11-30 11:20:06 
+
+insert succeed at 2019-11-30 11:40:05 
+
+insert succeed at 2019-11-30 12:00:14 
+
+insert succeed at 2019-11-30 12:20:06 
+
+insert succeed at 2019-11-30 12:40:06 
+
+insert succeed at 2019-11-30 13:00:11 
+
+insert succeed at 2019-11-30 13:20:04 
+
+insert succeed at 2019-11-30 13:40:06 
+
+insert succeed at 2019-11-30 14:00:14 
+
+insert succeed at 2019-11-30 14:20:17 
+
+insert succeed at 2019-11-30 14:40:18 
+
+insert succeed at 2019-11-30 15:01:27 
+
+insert succeed at 2019-11-30 15:20:24 
+
+insert succeed at 2019-11-30 15:41:04 
+
+insert succeed at 2019-11-30 16:00:37 
+
+insert succeed at 2019-11-30 16:20:41 
+
+insert succeed at 2019-11-30 16:40:21 
+

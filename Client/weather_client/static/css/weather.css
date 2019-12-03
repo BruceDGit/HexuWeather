@@ -1,0 +1,369 @@
+.weatherInfo {
+	width: 315px;
+	height: 240px;
+	position: relative;
+}
+
+.weatherInfo .weatherWind {
+	padding: 0%;
+	margin: 10px 0 0px 40px;
+	font-size: 13px;
+	line-height: 14px;
+}
+
+.weatherInfo .weatherWind:before {
+	content: url(/static/images/u37.png);
+}
+
+.weatherInfo .weatherTEMP {
+	overflow: hidden;
+	margin: 0%;
+	padding: 0%;
+}
+
+.weatherInfo .weatherTEMP p {
+	font-family: 'Arial Negreta', 'Arial Normal', 'Arial';
+	font-weight: 700;
+	font-style: normal;
+	font-size: 72px;
+	height: 56px;
+	line-height: 56px;
+	margin: 18px 40px 0 40px;
+	padding: 0%;
+	float: left;
+}
+
+.weatherInfo .weatherTEMP p span {
+	font-size: 25px;
+}
+
+.weatherInfo .weatherTEMP img {
+	float: left;
+	margin-top: 11px;
+}
+
+.weatherInfo .weatherCounty {
+	font-size: 36px;
+	text-align: left;
+	line-height: 36px;
+	font-family: 'Arial Normal', 'Arial';
+	font-weight: 400;
+	margin: 18px 0 0 40px;
+}
+
+.weatherInfo .weatherLocal {
+	overflow: hidden;
+	margin: 0%;
+	padding: 0%;
+}
+
+.weatherInfo .weatherLocal p {
+	float: left;
+	height: 28px;
+	margin: 11px 0 0 40px;
+	padding: 0 0 0 30px;
+	font-family: 'Arial Normal', 'Arial';
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 28px;
+	background: url(/static/images/u30.png) no-repeat left top;
+}
+
+.weatherInfo .weatherLocal input {
+	width: 28px;
+	height: 14px;
+	border: 0;
+	background: url(/static/images/u32.png) no-repeat right top;
+	float: left;
+	margin: 18px 0 0 10px;
+	cursor: pointer;
+}
+
+.weatherInfo .date {
+	font-size: 36px;
+	text-align: left;
+	font-family: 'Arial Normal', 'Arial';
+	font-weight: 400;
+	font-style: normal;
+	line-height: 36px;
+	margin: 8px 0 0 40px;
+}
+
+.card .tempOrWind {
+	margin: 0%;
+	padding: 0%;
+	float: right;
+}
+
+.card .tempOrWind li {
+	display: inline-block;
+	list-style-type: none;
+}
+
+.card .tempOrWind .aSelected {
+	text-decoration: none;
+	color: white;
+}
+
+.card .tempOrWind .aUnselected {
+	text-decoration: underline;
+	color: white;
+}
+
+.card .weather24 {
+	height: 240px;
+	width: 100%;
+	margin: 0%;
+	padding: 0%;
+}
+
+.card #weather24-2 {
+	display: none;
+}
+
+.top * {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	border: none;
+	list-style: none;
+}
+
+.top {
+	height: 235px;
+	width: 100%;
+	margin: 0 auto;
+}
+  
+.title {
+	height: 40px;
+	border-bottom: 2px solid rgba(230, 230, 230);
+}
+
+.title p {
+	font-size: 20px;
+	font-weight: 600;
+	padding-top: 12px;
+	padding-left: 17px;
+}
+
+.top ul {
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 30px;
+	overflow: hidden;
+}
+
+.top ul li {
+	float: left;
+	margin: 0 35px;
+	text-align: center;
+}
+
+.top ul li img {
+	height: 100px;
+	width: 100px;
+}
+
+.top ul li p {
+	margin-top: 6px;
+}
+
+.box * {
+	margin: 0;
+	padding: 0;
+}
+
+.box {
+	width: 720px;
+	height: 100%;
+	margin: 0;
+}
+
+.box .box-title {
+	height: 40px;
+	background-color: rgba(188, 188, 188);
+	border-bottom: 1px solid #fff;
+}
+
+.box .box-title p {
+	padding-top: 10px;
+	padding-left: 35px;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.box-main {
+	height: 224px;
+}
+
+.box-main .left {
+	float: left;
+	width: 215px;
+	height: 215px;
+	margin-left: 30px;
+	margin-top: 10px;
+}
+
+.box-main .left img {
+	width: 100%;
+	height: 100%;
+}
+
+.box-main .right {
+	display: inline-block;
+	margin-left: 30px;
+	margin-top: 10px;
+}
+
+.box-main ul li {
+	margin-bottom: 15px;
+	list-style-type: none;
+}
+
+.box-main ul li:first-child a {
+	font-weight: 900;
+}
+
+.box-main ul li a {
+	text-decoration: none;
+	color: white;
+	font-size: 15px;
+}
+
+.weatherNewsBanner {
+	padding: 0;
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+}
+
+.weatherNewsBanner img {
+	width: 100%;
+}
+
+.weatherNewsBanner .banner ul {
+	list-style: none;
+	padding-left: 0px;
+	margin-bottom: 0px;
+}
+
+.weatherNewsBanner .banner ul li {
+	display: none;
+	opacity: 0;
+}
+
+.weatherNewsBanner .banner ul li:nth-child(1) {
+	opacity: 1;
+	display: block;
+}
+
+.weatherNewsBanner .banner ul li img {
+	width: 100%;
+	top: 0px;
+}
+
+.weatherNewsBanner .jumpBtn {
+	width: 100%;
+	height: 24px;
+	background-color: rgba(8, 8, 8, 0.6);
+	position: absolute;
+	bottom: 0px;
+	line-height: 24px;
+	text-align: center;
+}
+
+.weatherNewsBanner .jumpBtn h6 {
+	color: white;
+	width: 150px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	padding-right: 8px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.weatherNewsBanner .jumpBtn ul {
+	height: 14px;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -7px;
+	text-align: center;
+	display: flex;
+}
+
+.weatherNewsBanner .jumpBtn ul li {
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	background-color: #666;
+	margin-right: 3px;
+	cursor: pointer;
+	font-size: 8px;
+	line-height: 14px;
+	color: white;
+}
+
+.weatherNewsBanner .jumpBtn ul li:first-child {
+	margin-left: 0px;
+}
+
+.leftcolumn #week_forecast_7 {
+	overflow: visible;
+	padding: 15px 0 0 0;
+}
+
+.leftcolumn #week_forecast_7 ul {
+	display: inline-block;
+	list-style-type: none;
+	padding: 0%;
+	margin: 0%;
+	margin-top: 5px;
+	width: 750px;
+	border-left: solid 1px #bbb;
+	border-top: solid 1px #bbb;
+}
+
+.leftcolumn #week_forecast_7 ul li {
+	overflow: hidden;
+	width: 100%;
+	border-right: solid 1px #bbb;
+	border-bottom: solid 1px #bbb;
+}
+
+.leftcolumn #week_forecast_7 ul li span {
+	display: inline-block;
+	padding: 0%;
+	margin: 0%;
+	float: left;
+	width: 106.8px;
+	text-align: center;
+	padding: 0%;
+}
+
+.week_forecast {
+	height: 33px;
+	line-height: 33px;
+	list-style-type: none;
+}
+
+.weather_7 {
+	height: 108px;
+	line-height: 108px;
+	list-style-type: none;
+	border-right: solid 1px #bbb;
+	font-size: 14px;
+}
+
+.leftcolumn #week_forecast_7 ul li span p {
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	padding: 0%;
+	margin: 10px 0 8px 15px;
+	text-align: left;
+}

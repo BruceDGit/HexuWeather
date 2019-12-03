@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>天气</title>
+    <link rel="stylesheet" href="/static/css/weather.css">
+    <link rel="stylesheet" href="/static/css/common.css?ver=1">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="logo">和煦天气</h1>
+            <div class="searchBox">
+                <form>
+                    <input type="text" onfocus="this.value = '';" placeholder="输入城市、区县、景点名称 查天气" }"><input type="submit"
+                        value="">
+                </form>
+            </div>
+
+            <ul class="topNav">
+                <li>
+                    <a href="/index">首页</a>
+                </li>
+                <li>
+                    <a href="/weather">天气</a>
+                </li>
+                <li>
+                    <a href="/news">资讯</a>
+                </li>
+                <li>
+                    <a href="/trip">出行</a>
+                </li>
+                <li>
+                    <a href="/travel">旅游</a>
+                </li>
+            </ul>
+            <ul class="topLR">
+                <li>
+                    <a href="/login">登录</a>/
+                    <a href="/register">注册</a>
+                </li>
+            </ul>
+            <div class="active_dp">
+                <p>
+                    <span><a href="/index">首页</a></span>
+                    >>
+                    <span>天气</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="weatherInfo">
+            </div>
+
+            <div class="leftcolumn">
+                <div class="card">
+                    <h2>生活指数</h2>
+                    <div id="top" class="top">
+                        <ul>
+                            <li>
+                                <img src="/static/images/a1.PNG" alt="穿衣指数">
+                                <p>穿衣指数</p>
+                                <p></p>
+                            </li>
+
+                            <li>
+                                <img src="/static/images/a2.PNG" alt="紫外线指数">
+                                <p>紫外线指数</p>
+                                <p></p>
+                            </li>
+
+                            <li>
+                                <img src="/static/images/a3.PNG" alt="洗车指数">
+                                <p>洗车指数</p>
+                                <p></p>
+                            </li>
+
+                            <li>
+                                <img src="/static/images/a4.PNG" alt="空气污染扩散指数">
+                                <p>空气污染扩散指数</p>
+                                <p></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>24小时预报</h2>
+                    <ul class="tempOrWind" id="tempOrWind">
+                        <li><a class="aSelected" href="javascript:void(0);">温度</a></li>
+                        <li><a class="aUnselected" href="javascript:void(0);">风力</a></li>
+                    </ul>
+                    <div id="weather24-1" class="weather24"></div>
+                    <div id="weather24-2" class="weather24"></div>
+
+
+                </div>
+                <div class="card" id="week_forecast_7">
+                    <h2>&nbsp;&nbsp;&nbsp;7天预报</h2>
+                    <div>
+                        <ul>
+                            <li>
+                                <span class="week_forecast"></span>
+                                <span class="week_forecast"></span>
+                                <span class="week_forecast"></span>
+                                <span class="week_forecast"></span>
+                                <span class="week_forecast"></span>
+                                <span class="week_forecast"></span>
+                                <span class="week_forecast"></span>
+                            </li>
+                            <li>
+                                <span class="weather_7">
+                                    <!-- <p>多云</p>
+                                    <p>5/13℃</p>
+                                    <p>西北风&nbsp;3级</p> -->
+                                </span>
+                                <span class="weather_7">
+                                    <!-- <p>多云</p>
+                                    <p>5/13℃</p>
+                                    <p>西北风&nbsp;3级</p> -->
+                                </span>
+                                <span class="weather_7">
+                                    <!-- <p>多云</p>
+                                    <p>5/13℃</p>
+                                    <p>西北风&nbsp;3级</p> -->
+                                </span>
+                                <span class="weather_7">
+                                    <!-- <p>多云</p>
+                                    <p>5/13℃</p>
+                                    <p>西北风&nbsp;3级</p> -->
+                                </span>
+                                <span class="weather_7">
+                                    <!-- <p>多云</p>
+                                    <p>5/13℃</p>
+                                    <p>西北风&nbsp;3级</p> -->
+                                </span>
+                                <span class="weather_7">
+                                    <!-- <p>多云</p>
+                                    <p>5/13℃</p>
+                                    <p>西北风&nbsp;3级</p> -->
+                                </span>
+                                <span class="weather_7" style="border: 0;">
+                                    <!-- <p>多云</p>
+                                    <p>5/13℃</p>
+                                    <p>西北风&nbsp;3级</p> -->
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>气象新闻</h2>
+                    <div id="box" class="box">
+                        <div id="box_main" class="box-main">
+                            <div class="left">
+                                <div class="weatherNewsBanner">
+                                    <div class="banner">
+                                        <ul>
+                                            <li><img src="/static/images/n1.png"></li>
+                                            <li><img src="/static/images/n2.png"></li>
+                                            <li><img src="/static/images/n3.png"></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="jumpBtn">
+                                        <h6></h6>
+                                        <ul>
+                                            <li jumpImg="0">1</li>
+                                            <li jumpImg="1">2</li>
+                                            <li jumpImg="2">3</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="right">
+                                <li><a href="javascript:void(0);" onclick="swap_infopage('test_new_id')">双街第一小学足球场，田径场即将免费开放 2019-09-27</a></li>
+                                <li><a href="javascript:void(0);" onclick="swap_infopage('test_new_id')">大张庄南还迁区位与永定新河南（北部新区内） 2019-09-27</a></li>
+                                <li><a href="javascript:void(0);" onclick="swap_infopage('test_new_id')">尖山桥即将启动建设 预计2020年8月份实施完成 2019-09-27</a></li>
+                                <li><a href="javascript:void(0);" onclick="swap_infopage('test_new_id')">滨海新区：近期即将启动紫云公园提升改造计划 2019-09-27</a></li>
+                                <li><a href="javascript:void(0);" onclick="swap_infopage('test_new_id')">岳会村煤改气正在进行当中 预计10月底彻底完成 2019-09-27</a></li>
+                                <li><a href="javascript:void(0);" onclick="swap_infopage('test_new_id')">融创臻园配套小学正在建设中 2020年交付使用 2019-09-27</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rightcolumn">
+                <div class="card">
+                    <h2>周边旅游</h2>
+                    <a class="more" href="travel.html">更多>></a>
+                    <ul class="right" id="surrounding_tour">
+                        <!-- <li class="headerLine"><span class="view">景点</span><span>天气</span><span>气温</span></li>
+                        <li class="firstLine"><span class="view">天津之眼</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">意式风情街</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">古文化街</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">五大道</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">瓷房子</span><span>多云转阴</span><span>17 ~ 30℃</span></li> -->
+                    </ul>
+                </div>
+                <div class="card">
+                    <h2>周边天气</h2>
+                    <ul class="right" id="surrounding_weather">
+                        <!-- <li class="headerLine"><span class="view">地区</span><span>天气</span><span>气温</span></li>
+                        <li class="firstLine"><span class="view">和平区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">河东区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">河西区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">南开区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">河北区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">红桥区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">东丽区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">西青区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">津南区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">北辰区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">武清区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">宝坻区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">滨海新区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">宁河区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">静海区</span><span>多云转阴</span><span>17 ~ 30℃</span></li>
+                        <li><span class="view">蓟州区</span><span>多云转阴</span><span>17 ~ 30℃</span></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>
+                <span>相关链接：</span>
+                <a target="_blank" href="http://www.cma.gov.cn/">中国气象局</a>
+                <a target="_blank" href="http://www.chinamsa.org">中国气象服务协会</a>
+                <a target="_blank" href="http://www.weathertv.cn/">中国天气频道</a>
+                <a target="_blank" href="http://www.xn121.com/">中国天气网</a>
+            </p>
+            <hr>
+            <p>Copyright &copy; 2019.和煦天气网 All rights reserved</p>
+        </div>
+    </div>
+
+</body>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/echarts.min.js"></script>
+<script src="/static/js/weather.js"></script>
+<script src="/static/js/common.js"></script>
+
+<script>
+    // 显示当前日期
+    function write_date() {
+        var mydate = new Date()
+        var year = mydate.getYear()
+        if (year < 1000)
+            year += 1900
+        var month = mydate.getMonth() + 1
+        var daym = mydate.getDate()
+        if (daym < 10)
+            daym = "0" + daym
+        // document.write(year + "年" + month + "月" + daym + "日")
+        $(".container .row .weatherInfo .date").text(year + "年" + month + "月" + daym + "日")
+    }
+    // 渲染实时天气模块
+    function write_weatherinfo() {
+        var $location = localStorage.getItem("location");
+        $.ajax({
+            type: "get",
+            url: "http://127.0.0.1:8000/api/v1/weather/" + $location + "?now=1",
+            success: function (result) {
+                result = {
+                    'code': 200,
+                    data: {
+                        'weather': '多云',
+                        'temperature': 6,
+                        'wind': {
+                            'scale': 3,
+                            'direction': '西北'
+                        }
+                    }
+                };
+                if (200 == result.code) {
+                    var weatherinfo_tag = $(".container .row .weatherInfo")
+                    var weatherinfo_html = ""
+                    var location_list = $location.split(',')
+                    // todo 完善天气图标
+                    var img_src = '/static/images/u35.png'
+
+                    weatherinfo_html += '<p class="weatherWind">'
+                    // 风力风向
+                    weatherinfo_html += result.data.wind.direction + '风'
+                    weatherinfo_html += result.data.wind.scale + '级'
+                    weatherinfo_html += '</p><div class="weatherTEMP"><p>'
+                    // 温度
+                    weatherinfo_html += result.data.temperature
+                    weatherinfo_html += '°<span>C</span></p><img src="'
+                    // 天气情况
+                    weatherinfo_html += img_src
+                    weatherinfo_html += '" alt="'
+                    weatherinfo_html += result.data.weather
+                    weatherinfo_html += '" class="tianqi"></div><div class="weatherCounty">'
+                    // 区县
+                    weatherinfo_html += location_list[2]
+                    weatherinfo_html += '</div><div class="weatherLocal"><p>'
+                    // 省市
+                    weatherinfo_html += location_list[0] + ',' + location_list[1]
+                    weatherinfo_html += '</p><input type="button"></div><div class="date">'
+                    weatherinfo_html += '<script' + ' type="text/javascript"> write_date(); </' + 'script></div>'
+
+                    weatherinfo_tag.html(weatherinfo_html)
+                } else {
+                    alert(result.error)
+                }
+            }
+        })
+    }
+    // 渲染生活指数
+    function write_livingindex() {
+        var $location = localStorage.getItem("location");
+        $.ajax({
+            type: "get",
+            url: "http://127.0.0.1:8000/api/v1/weather/" + $location + "?living_index=1",
+            success: function (result) {
+                result = {
+                    'code': 200,
+                    data: {
+                        'clothing': '最弱',
+                        'uv': '高',
+                        'car_washing': '不宜',
+                        'air_pollution_diffusion': '差'
+                    }
+                }
+                if (200 == result.code) {
+                    var livingindex_tag = $(".leftcolumn .card #top ul li")
+                    var data_list = [result.data.clothing, result.data.uv, result.data.car_washing, result.data.air_pollution_diffusion]
+
+                    livingindex_tag.each(function (index, element) {
+                        $(element).children("p:last").text(data_list[index])
+                    })
+                } else {
+                    alert(result.error)
+                }
+            }
+        })
+    }
+    // 渲染7 天预报数据
+    function write_week_forecast() {
+        var $location = localStorage.getItem("location");
+        $.ajax({
+            type: "get",
+            url: "http://127.0.0.1:8000/api/v1/weather/" + $location + "?forecast_7d=1",
+
+            beforeSend: function (request) {
+                result = {
+                    'code': 200,
+                    data: {
+                        'date': ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'],
+                        'weather': ['多云', '多云', '多云', '多云', '多云', '多云', '多云'],
+                        'temperature': ['5/13', '5/13', '5/13', '5/13', '5/13', '5/13', '5/13'],
+                        'wind_direction': ['西北', '西北', '西北', '西北', '西北', '西北', '西北'],
+                        'wind_scale': [2, 3, 1, 3, 2, 3, 2]
+                    }
+                }
+                if (200 == result.code) {
+                    var week_forecast_tag = $("#week_forecast_7 span.week_forecast")
+                    var weather_7_tag = $("#week_forecast_7 span.weather_7")
+                    week_forecast_tag.each(function (index, elem) {
+                        $(elem).text(result.data.date[index])
+                    })
+                    weather_7_tag.each(function (index, elem) {
+                        var span_html = ''
+                        span_html += "<p>" + result.data.weather[index] + "</p>"
+                        span_html += "<p>" + result.data.temperature[index] + "℃</p>"
+                        span_html += "<p>" + result.data.wind_direction[index]
+                        span_html += "风&nbsp;" + result.data.wind_scale[index] + "级</p>"
+                        $(elem).html(span_html)
+                    })
+                } else {
+                    alert(result.error)
+                }
+            }
+        })
+    }
+
+
+
+
+    $(function () {
+        //------------------------------------------------------//
+        //                       实时天气                        //
+        //--------------------------------------- --------------//
+        // 1.查找本地存储是否有定位信息
+
+        if (localStorage.getItem("location")) {
+            // 2.如果有就直接发请求获取实时天气数据
+            write_weatherinfo();
+        } else {
+            // 3.如果没有,则程序获取用户定位信息,之后再发请求获取实时天气数据
+            getLocation({ myfunc: write_weatherinfo })
+        }
+
+        //------------------------------------------------------//
+        //                       生活指数                        //
+        //--------------------------------------- --------------//
+        // 1.查找本地存储是否有定位信息
+        if (localStorage.getItem("location")) {
+            // 2.如果有就直接发请求获取
+            write_livingindex();
+        } else {
+            // 3.如果没有,则程序获取用户定位信息,之后再发请求获取
+            getLocation({ myfunc: write_livingindex })
+        }
+
+        //------------------------------------------------------
+        //                      24 小时温度                      
+        //--------------------------------------- --------------
+        // 1.查找本地存储是否有定位信息
+        if (localStorage.getItem("location")) {
+            // 2.如果有就直接发请求获取
+            write_weather24_1();
+        } else {
+            // 3.如果没有,则程序获取用户定位信息,之后再发请求获取
+            getLocation({ myfunc: write_weather24_1 })
+        }
+
+        //------------------------------------------------------
+        //                      7 天预报                      
+        //--------------------------------------- --------------
+
+        // 1.查找本地存储是否有定位信息
+        if (localStorage.getItem("location")) {
+            // 2.如果有就直接发请求获取
+            write_week_forecast();
+        } else {
+            // 3.如果没有,则程序获取用户定位信息,之后再发请求获取
+            getLocation({ myfunc: write_week_forecast })
+        }
+
+        //------------------------------------------------------
+        //                      周边天气                      
+        //------------------------------------------------------
+
+        // 1.查找本地存储是否有定位信息
+        if (localStorage.getItem("location")) {
+            // 2.如果有就直接发请求获取
+            write_surrounding_weather();
+        } else {
+            // 3.如果没有,则程序获取用户定位信息,之后再发请求获取
+            getLocation({ myfunc: write_surrounding_weather })
+        }
+
+        //------------------------------------------------------
+        //                      周边景点                      
+        //------------------------------------------------------
+
+        // 1.查找本地存储是否有定位信息
+        if (localStorage.getItem("location")) {
+            // 2.如果有就直接发请求获取
+            write_surrounding_tour();
+        } else {
+            // 3.如果没有,则程序获取用户定位信息,之后再发请求获取
+            getLocation({ myfunc: write_surrounding_tour })
+        }
+
+    })
+
+
+
+</script>
+
+</html>

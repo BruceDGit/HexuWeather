@@ -1,0 +1,24 @@
+insert succeed at 2019-11-28 19:38:36 
+error:HTTPSConnectionPool(host='free-api.heweather.net', port=443): Max retries exceeded with url: /s6/weather/lifestyle?location=CN101030100&lang=zh-Hans&unit=m&key=4f2add96715f4897a72e60db994c78a0 (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fe47038eef0>: Failed to establish a new connection: [Errno -2] Name or service not known',)) 2019-11-28 19:47:15 
+error:HTTPSConnectionPool(host='api.heweather.net', port=443): Max retries exceeded with url: /s6/weather/lifestyle?location=CN101030100&lang=zh-Hans&unit=m&key=4f2add96715f4897a72e60db994c78a0 (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f4d2bad4ef0>: Failed to establish a new co
+nnection: [Errno -2] Name or service not known',)) 2019-11-28 19:47:27 
+
+
+
+
+error:'basic' 2019-11-28 23:57:28 
+error:'basic' 2019-11-28 23:58:24 
+error:'basic' 2019-11-28 23:59:47 
+error:'basic' 2019-11-29 00:00:01 
+error:'basic' 2019-11-29 00:00:47 
+error:'basic' 2019-11-29 00:00:56 
+error:'basic' 2019-11-29 00:01:38 
+insert succeed at 2019-11-29 00:02:24 
+insert succeed at 2019-11-29 00:02:42 
+insert succeed at 2019-11-29 09:27:03 
+insert succeed at 2019-11-29 12:27:03 
+insert succeed at 2019-11-29 19:27:05 
+insert succeed at 2019-11-30 08:58:50 
+insert succeed at 2019-11-30 08:59:10 
+insert succeed at 2019-11-30 09:27:03 
+insert succeed at 2019-11-30 12:27:06 
