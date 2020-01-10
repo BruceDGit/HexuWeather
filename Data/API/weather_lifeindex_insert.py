@@ -61,12 +61,16 @@ class WeatherAPI(object):
         self.cursor.close()
         self.db.close()
 if __name__ == '__main__':
-    try:
-        api = WeatherAPI()
-        api.run()
-        with open('/home/tarena/Bruce/CityWeather/111/log/weather_lifeindex_insert.log' , 'a') as f:
-            f.write('insert succeed at {} \n'.format(datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-            print('insert succeed at {} \n'.format(datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-    except Exception as e:
-        with open('/home/tarena/Bruce/CityWeather/111/log/weather_lifeindex_insert.log' , 'a') as f:
-            f.write('error:{} {} \n'.format(e , datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+    print('program is beginning ~ {} \n'.format(datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+    for i in range(3):
+        try:
+            api = WeatherAPI()
+            api.run()
+            with open('/home/ubuntu/logs/HexuWeather/api/python_logs/weather_lifeindex_insert.log', 'a') as f:
+                f.write('insert succeed at {} \n'.format(datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+                print('insert succeed at {} \n'.format(datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+                break
+        except Exception as e:
+            print(e)
+            with open('/home/ubuntu/logs/HexuWeather/api/python_logs/weather_lifeindex_insert.log', 'a') as f:
+                f.write('error:{} {} \n'.format(e, datetime.now().strftime('%Y-%m-%d %H:%M:%S')))

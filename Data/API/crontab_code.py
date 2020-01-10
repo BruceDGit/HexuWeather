@@ -8,17 +8,17 @@
 """
 # 实况天气	10-20分钟更新一次
 # weather_now_insert
-*/20 * * * * python3 /home/tarena/Bruce/CityWeather/111/weather_now_insert.py  >>/home/tarena/Bruce/CityWeather/111/crontab_log/weather_now_insert.log 2>&1
+27 8 * * * /home/ubuntu/anaconda3/bin/python3.6 /home/ubuntu/project/weather_spider/apis/weather_now_insert.py  >>/home/ubuntu/logs/HexuWeather/api/crontab_logs/weather_now_insert.log 2>&1
 
 # 生活指数	每天更新3次，分别在8，11，18点左右更新
 # weather_lifeindex_insert
-27 9,12,19 * * * python3 /home/tarena/Bruce/CityWeather/111/weather_lifeindex_insert.py >>/home/tarena/Bruce/CityWeather/111/crontab_log/weather_lifeindex_insert.log 2>&1
+27 9 * * * /home/ubuntu/anaconda3/bin/python3.6 /home/ubuntu/project/weather_spider/apis/weather_lifeindex_insert.py >>/home/ubuntu/logs/HexuWeather/api/crontab_logs/weather_lifeindex_insert.log 2>&1
 
 # 今日天气	每小时更新一次
 # weather_today_insert
-15 * * * * python3 /home/tarena/Bruce/CityWeather/111/weather_today_insert.py >>/home/tarena/Bruce/CityWeather/111/crontab_log/weather_today_insert.log 2>&1
+27 8 * * * /home/ubuntu/anaconda3/bin/python3.6 /home/ubuntu/project/weather_spider/apis/weather_today_insert.py >>/home/ubuntu/logs/HexuWeather/api/crontab_logs/weather_today_insert.log 2>&1
 
 # 7日天气	每小时更新一次
 # weather_7days_insert
-35 * * * * python3 /home/tarena/Bruce/CityWeather/111/weather_7days_insert.py >>/home/tarena/Bruce/CityWeather/111/crontab_log/weather_7days_insert.log 2>&1
+27 8 * * * /home/ubuntu/anaconda3/bin/python3.6 /home/ubuntu/project/weather_spider/apis/weather_7days_insert.py >>/home/ubuntu/logs/HexuWeather/api/crontab_logs/weather_7days_insert.log 2>&1
 """
