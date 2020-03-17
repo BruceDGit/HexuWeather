@@ -179,44 +179,54 @@ class DocSimilarityAlgorithm:
         # 预加载数据
         doc_vector_model = self.doc2vec_train()
         corpus = self.news_doc_obj.get_3m_news()  # 【id context date】
-        length = len(corpus)
+
+        new_corpus = []
+        for item in corpus:
+            tmp_a = item[0]
+            tmp_b = re.sub(r'\s', '', item[1])
+            new_corpus.append((tmp_a, tmp_b))
+        length = len(new_corpus)
 
         # 初始化相似度矩阵为 0 矩阵
         cosine_matrix = pd.DataFrame()
-        index = [item[0] for item in corpus]
+        index = [item[0] for item in new_corpus]
         pds = pd.Series(np.zeros_like(index), index=index).astype(np.float)
         for idx in index:
             cosine_matrix[idx] = pds
 
-        # print("余弦相似度矩阵形状:", cosine_matrix.shape)
-
         # 计算余弦相似度, 并将数据存入相似度矩阵
         print('开始 计算 余弦相似度矩阵...', datetime.datetime.now())
+        time_1 = time.time()
+        # 添加语料入文档向量模型
+        for item in new_corpus:
+            doc_vector_model.addDocument(item[0], item[1])
+        time_2 = time.time()
+        # 计算余弦相似度
         cnt = 0
-        for i in range(length):
-            item_a = corpus[i]
-            text_a = re.sub(r'\s', '', item_a[1])
-            # print(item_a[0])
-            for j in range(i+1, length):
-                item_b = corpus[j]
-                begin_time = time.time()
-                text_b = re.sub(r'\s', '', item_b[1])
-                next_time = time.time()
-                print("\t\t过滤字符串空格用时:", next_time-begin_time)
-                sim_score = doc_vector_model.similarity(text_a, text_b)
-                end_time = time.time()
-                print('\t\t计算余弦相似度矩阵用时:', end_time-next_time)
-                # print(item_a[0], item_b[0], ':', sim_score)
-
-                cosine_matrix[item_a[0]][item_b[0]] = cosine_matrix[item_b[0]][item_a[0]] = sim_score
-                # print(cosine_matrix[item_a[0]][item_b[0]].dtype, type(sim_score))
+        # for i in range(length//2+1):
+        #     item = new_corpus[i]
+        for item in new_corpus:
+            res_lst = doc_vector_model.nearest(item[1], length)
+            for res in res_lst:
+                res_key = res.getKey().intValue()
+                res_value = res.getValue().floatValue()
+                # todo 重新执行一遍程序, 记录各程序部分消耗的时间
+                #  不能只计算矩阵的一半, 以为程序是矩阵的行计算的, 不到最后右下角部分是计算不到的
+                cosine_matrix[item[0]][res_key] = res_value
                 cnt += 1
                 if cnt % 10000 == 0:
-                    # print()
                     print('\t已完成第 %s 次计算' %(cnt), datetime.datetime.now())
-            #         break
-            # print(cosine_matrix[:20])
-            # break
+        time_3 = time.time()
+
+        print()
+        print("cosine_matrix.iloc[:20, :20]:\n", cosine_matrix.iloc[:20, :20])
+        print('-*'*45)
+        print('cosine_matrix.iloc[-20:, -20:]\n', cosine_matrix.iloc[-20:, -20:])
+        print("添加所有文档用时:", time_2-time_1)
+        print("计算余弦相似度用时:", time_3-time_2)
+
+        # sys.exit()
+
         print('余弦相似度矩阵 计算完成!', datetime.datetime.now())
         return cosine_matrix
 
@@ -230,18 +240,27 @@ class DocSimilarityAlgorithm:
         cosine_matrix = self.calculate_cosine_matrix()
 
         print('开始计算 新闻推荐矩阵...')
+        # 余弦相似度矩阵乘上衰减系数得到推荐系数矩阵
+        time_4 = time.time()
         for i in att_coe.keys():
             cosine_matrix.loc[i] = cosine_matrix.loc[i] * float(att_coe[i])
+        time_5 = time.time()
 
+        # 从推荐系数矩阵中选取前10条数据, 得到新闻推荐矩阵
         recommendation_matrix = pd.DataFrame()
         top_n = 10
         index = list(range(1, top_n+1))
         for i in att_coe.keys():
             new_df = cosine_matrix.sort_values(by=i, ascending=False)
-            recommendation_matrix[i] = pd.Series(new_df.index[:top_n], index=index)
+            recommendation_matrix[i] = pd.Series(new_df.index[1:top_n+1], index=index)
+        time_6 = time.time()
 
-        print(recommendation_matrix.iloc[:20, :20])
+        print('recommendation_matrix.iloc[:, :20]:\n', recommendation_matrix.iloc[:, :20])
+        print()
+        print('recommendation_matrix.iloc[:, -20:]:\n', recommendation_matrix.iloc[:, -20:])
         print('新闻推荐矩阵 计算完成!', datetime.datetime.now())
+        print("计算 推荐系数矩阵 用时:", time_5 - time_4)
+        print("计算 新闻推荐矩阵 用时:", time_6 - time_5)
 
     """写一个SQL语句, 用关键字及新闻标题验证推荐结果是否合理"""
     def result_show(self):
