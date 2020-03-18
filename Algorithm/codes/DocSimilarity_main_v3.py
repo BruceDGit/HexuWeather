@@ -6,22 +6,26 @@
     2.调用hanlp分词模块, 将文本语料格式转换为以空格分词的纯文本格式, 如: "拍摄 时 我 让 演员 放开 来 表演 , 表现 出 生活 中 那种 带有 毛边 的 质朴 ..."
     3.调用hanlp词向量模块对语料库进行词向量训练, 得到的词向量txt文本保存到固定路径下
     4.从数据库读取近3个月的新闻数据, 存入字典中
-    5.调用hanlp构造文档向量模型, 用文档向量模型计算新闻之间的余弦相似度矩阵, 存入 pandas 的 DataFrame 中
+    5.调用hanlp构造文档向量模型, 用文档向量模型计算新闻之间的余弦相似度矩阵, 存入 pandas 的 DataFrame 中, 保存到本地 csv 文件中
     6.从数据库读取近3个月新闻的日期, 计算出每条新闻的衰减系数
-    7.用余弦相似度矩阵和衰减系数计算出新闻推荐系数矩阵, 对新闻推荐矩阵压缩只保留推荐系数最高的10条
+        注: 本次没有使用衰减系数. 经过实际效果对比, 乘上衰减系数之后, 新闻与自身的推荐系数就可能不是最大的, 无法做到剔除自身,
+            且用户关心的更多是内容相关, 乘上衰减系数之后, 从新闻标题的直观印象上看推荐的相关性不强.
+    7.对余弦相似度矩阵压缩得到只保留推荐系数最高的10条的新闻推荐矩阵, 将数据存储到 MySQL 数据库中
     8.写一个SQL语句, 用关键字及新闻标题验证推荐结果是否合理
 """
 import datetime
 import re
 import time
-
 import pandas as pd
 import numpy as np
+
 import pymysql
+
 from pyhanlp import *
 
 TRAIN_FILE_NAME = os.path.join('./data', 'segmented_news_corpus.txt')
 MODEL_FILE_NAME = os.path.join('./data', "news_word2vec.txt")
+COSINE_MATRIX_FILE_PATH = os.path.join('./data/cosine_matrix_files', "cos_matrix_"+str(datetime.date.today())+".csv")
 
 
 class NewsDocModel:
@@ -169,7 +173,7 @@ class DocSimilarityAlgorithm:
     def doc2vec_train(self):
         print('开始训练文档向量模型...', datetime.datetime.now())
         doc2vec_trainer = JClass('com.hankcs.hanlp.mining.word2vec.DocVectorModel')
-        doc_vector_model = doc2vec_trainer(self.news_doc_obj.word2vec_train())
+        doc_vector_model = doc2vec_trainer(self.news_doc_obj.get_word2vec_model())
         print('文档向量模型 训练完成!', datetime.datetime.now())
         return doc_vector_model
 
@@ -218,6 +222,7 @@ class DocSimilarityAlgorithm:
                     print('\t已完成第 %s 次计算' %(cnt), datetime.datetime.now())
         time_3 = time.time()
 
+        cosine_matrix.to_csv(COSINE_MATRIX_FILE_PATH)
         print()
         print("cosine_matrix.iloc[:20, :20]:\n", cosine_matrix.iloc[:20, :20])
         print('-*'*45)
@@ -232,39 +237,56 @@ class DocSimilarityAlgorithm:
 
     """用余弦相似度和衰减系数相乘, 得到推荐系数, 并为每条新闻提取最相关的10条新闻, 存入数据库"""
     def calculate_recommendation_matrix(self):
-        # todo 多线程重构, 将结果存入数据库
 
         print('程序开始...')
         # 获取衰减系数: {id:coe, id:coe, ...}
-        att_coe = self.news_doc_obj.get_att_coe()
-        cosine_matrix = self.calculate_cosine_matrix()
+        # att_coe = self.news_doc_obj.get_att_coe()
+        # cosine_matrix = self.calculate_cosine_matrix()
+        cosine_matrix = pd.read_csv(COSINE_MATRIX_FILE_PATH, index_col=0)
+        print(cosine_matrix.iloc[:10, :10])
 
         print('开始计算 新闻推荐矩阵...')
         # 余弦相似度矩阵乘上衰减系数得到推荐系数矩阵
-        time_4 = time.time()
-        for i in att_coe.keys():
-            cosine_matrix.loc[i] = cosine_matrix.loc[i] * float(att_coe[i])
+        # 考虑到乘上衰减系数之后, 新闻与自身的推荐系数就可能不是最大的, 无法做到剔除自身, 且用户关心的更多是内容相关, 去除衰减系数在逻辑上也合理
+        # time_4 = time.time()
+        # for i in att_coe.keys():
+        #     cosine_matrix.loc[i] = cosine_matrix.loc[i] * float(att_coe[i])
         time_5 = time.time()
 
         # 从推荐系数矩阵中选取前10条数据, 得到新闻推荐矩阵
-        recommendation_matrix = pd.DataFrame()
+        # recommendation_matrix = pd.DataFrame()
         top_n = 10
         index = list(range(1, top_n+1))
-        for i in att_coe.keys():
-            new_df = cosine_matrix.sort_values(by=i, ascending=False)
-            recommendation_matrix[i] = pd.Series(new_df.index[1:top_n+1], index=index)
-        time_6 = time.time()
 
-        print('recommendation_matrix.iloc[:, :20]:\n', recommendation_matrix.iloc[:, :20])
-        print()
-        print('recommendation_matrix.iloc[:, -20:]:\n', recommendation_matrix.iloc[:, -20:])
-        print('新闻推荐矩阵 计算完成!', datetime.datetime.now())
-        print("计算 推荐系数矩阵 用时:", time_5 - time_4)
-        print("计算 新闻推荐矩阵 用时:", time_6 - time_5)
+        try:
+            for i in cosine_matrix.columns:
+                new_df = cosine_matrix.sort_values(by=i, ascending=False)
+                # recommendation_matrix[i] = pd.Series(new_df.index[1:top_n+1], index=index)
+                reco_lst = [i]
+                for idx in new_df.index[1:top_n+1]:
+                    reco_lst.append(idx)
+                sql = "insert into news_recommendation(" \
+                      "new_id, " \
+                      "reco_rank_1, reco_rank_2, reco_rank_3, reco_rank_4, reco_rank_5," \
+                      "reco_rank_6, reco_rank_7, reco_rank_8, reco_rank_9, reco_rank_10) " \
+                      "values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"
+                self.news_doc_obj.cur.execute(sql, reco_lst)
+            self.news_doc_obj.db.commit()
+            time_6 = time.time()
+            print('新闻推荐矩阵 计算完成!', datetime.datetime.now())
+            print("计算 新闻推荐矩阵 用时:", time_6 - time_5)
+        except Exception as e:
+            self.news_doc_obj.db.rollback()
+            print("新闻推荐数据写入数据库失败: ", e)
+            return False
 
     """写一个SQL语句, 用关键字及新闻标题验证推荐结果是否合理"""
     def result_show(self):
-        pass
+        sql = ""
+        self.news_doc_obj.cur.execute(sql)
+        result = self.news_doc_obj.cur.fetchall()
+        for item in result:
+            print(item)
 
 
 def test():
