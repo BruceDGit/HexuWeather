@@ -340,7 +340,7 @@ class DocSimilarityAlgorithm:
                 res_value = res.getValue().floatValue()
                 cosine_matrix[item[0]][res_key] = res_value
                 cnt += 1
-                if cnt % 10000 == 0:
+                if cnt % 100000 == 0:
                     print('\t已完成第 %s 次计算' %(cnt), datetime.datetime.now())
         time_3 = time.time()
         # 保存
