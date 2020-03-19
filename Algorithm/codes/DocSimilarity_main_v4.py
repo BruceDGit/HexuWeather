@@ -26,7 +26,7 @@ from pyhanlp import *
 # 训练数据(熟预料)存放位置
 TRAIN_FILE_NAME = os.path.join('./data', 'segmented_news_corpus.txt')
 # 词向量模型存放位置
-MODEL_FILE_NAME = os.path.join('./data', "news_word2vec_"+str(datetime.date.today())+".txt")
+MODEL_FILE_NAME = os.path.join('./data/model_files', "news_word2vec_"+str(datetime.date.today())+".txt")
 # 词向量模型备份位置
 # BACKUP_MODEL_FILE_NAME = os.path.join('./data', "news_word2vec_backup_"+str(datetime.date.today())+".txt")
 BACKUP_MODEL_FILE_NAME = MODEL_FILE_NAME + '.backup_' + str(time.time())
@@ -364,7 +364,7 @@ class DocSimilarityAlgorithm:
         用对余弦相似度进行排序, 得到top10, 为每条新闻提取最相关的10条新闻, 存入数据库
         """
         print('\n', '*' * 72)
-        print('程序开始...\n')
+        print('程序开始...\n', datetime.datetime.now())
 
         self.calculate_cosine_matrix()
         cosine_matrix = pd.read_csv(COSINE_MATRIX_FILE_PATH, index_col=0)
