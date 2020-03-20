@@ -44,12 +44,12 @@ class NewsDocModel:
     提供内容如下
         1.数据库连接
         2.数据:
-            增量新闻数据 get_incremental_news() return: ((id, context), (id, context), ...)
+            增量新闻数据 __get_incremental_news() return: ((id, context), (id, context), ...)
             近3个月的新闻数据 get_3m_news() return: ((id, context, date), (id, context, date), ...)
         3.方法:
-            修改新闻日期类型 add_news_date()
-            文本分词 segmentation()
-            更新训练语料 update_segmented_corpus()
+            修改新闻日期类型 __add_news_date()
+            文本分词 __segmentation()
+            更新训练语料 __update_segmented_corpus()
             训练词向量 get_word2vec_model()
             注-衰减系数部分暂未更新...
     """
@@ -210,7 +210,7 @@ class NewsDocModel:
         若没有找到模型, 则直接调用hanlp的词向量模块对语料库进行词向量训练, 将得到的词向量txt文本保存到本地
         并return词向量模型
         """
-        # corpus_is_updated = self.update_segmented_corpus()
+        # corpus_is_updated = self.__update_segmented_corpus()
         self.update_segmented_corpus()
 
         print('开始训练词向量...', datetime.datetime.now())
@@ -273,11 +273,11 @@ class DocSimilarityAlgorithm:
     """
     新闻推荐算法
     包含如下方法:
-        doc2vec_train()
+        __doc2vec_train()
             构造文档向量模型, return doc_vector_model
-        calculate_cosine_matrix()
+        __calculate_cosine_matrix()
             计算余弦相似度矩阵 return cosine_matrix【pandas.DataFrame类型】
-        calculate_recommendation_matrix()
+        __calculate_recommendation_matrix()
             计算新闻推荐top10, 数据写入数据库
         result_show()
             验证推荐结果
