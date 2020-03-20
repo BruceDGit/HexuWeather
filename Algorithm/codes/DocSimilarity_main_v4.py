@@ -422,7 +422,16 @@ def test():
 
 if __name__ == '__main__':
     import timeit
-    print(timeit.timeit("test()", number=1, setup="from __main__ import test"))
+    for i in range(3):
+        try:
+            print(timeit.timeit("test()", number=1, setup="from __main__ import test"))
+            with open('/home/ubuntu/logs/HexuWeather/recognition/python_logs/DocSimilarity_python.log', 'a') as f:
+                f.write('script ran successfully at {} \n'.format(datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+                print('script ran successfully at {} \n'.format(datetime.now().strftime('%Y-%m-%d %H:%M:%S')), '\n')
+                break
+        except Exception as e:
+            with open('/home/ubuntu/logs/HexuWeather/recognition/python_logs/DocSimilarity_python.log', 'a') as f:
+                f.write('error:{} {} \n'.format(e, datetime.now().strftime('%Y-%m-%d %H:%M:%S')), '\n')
 
 
 
