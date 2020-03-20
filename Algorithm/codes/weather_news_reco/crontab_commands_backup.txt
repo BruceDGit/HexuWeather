@@ -1,0 +1,3 @@
+# 更新新闻推荐top10 两小时更新一次
+# calc_news_doc_similarity
+01 6,8,10,12,14,16,18,20,22  * * * /home/ubuntu/anaconda3/bin/python3.6 /home/ubuntu/project/weather_news_reco/calc_news_doc_similarity.py  >>/home/ubuntu/logs/HexuWeather/recognition/crontab_logs/calc_news_doc_similarity_crontab.log 2>&1
