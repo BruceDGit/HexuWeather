@@ -1,6 +1,6 @@
 import datetime
 
-from DocSimilarity_main_v4 import NewsDocModel
+from models.RecommentModels import NewsDocModel
 
 
 def alter_weather_user_db():
