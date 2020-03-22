@@ -18,6 +18,10 @@
 </head>
 
 <body onload="startTime()">
+	<div class="bg">
+		<img src="/static/images/background.jpg" alt="">
+		<img src="/static/images/city.jpg" alt="">
+	</div>
 
 	<div class="header">
 		<h1 class="indexLogo">和煦天气</h1>
@@ -129,7 +133,7 @@
 		// 渲染天气信息
 		function showTemperatures() {
 			var $location = localStorage.getItem("location");
-			var request_url = "http://127.0.0.1:8000/api/v1/weather/" + $location + "?index=1"
+			var request_url = "http://192.144.143.60:18000/api/v1/weather/" + $location + "?index=1"
 			$.ajax({
 				// 请求方式
 				type: "get",
