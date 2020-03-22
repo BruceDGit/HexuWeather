@@ -1,7 +1,7 @@
 // 获取用户定位信息，并将结果保存到本地存储
 function getLocation(params_dict) {
     // params_dict: {myfunc:fun_name, params: params}
-    var get_url = "http://127.0.0.1:8000/api/v1/user_ip"
+    var get_url = "http://192.144.143.60:18000/api/v1/user_ip"
     $.ajax({
         // 请求方式
         type: "get",
@@ -16,7 +16,7 @@ function getLocation(params_dict) {
         //         'user_ip': '192.255.255.255'
         //     }
         //     var query_set = result_ip.user_ip
-        //     query_url = 'http://127.0.0.1:8000/api/v1/location/' + query_set
+        //     query_url = 'http://192.144.143.60:18000/api/v1/location/' + query_set
         //     $.ajax({
         //         type: "get",
         //         url: query_url,
@@ -42,7 +42,7 @@ function getLocation(params_dict) {
                 // 	'user_ip': '192.255.255.255'
                 // }
                 var query_set = result.user_ip
-                query_url = 'http://127.0.0.1:8000/api/v1/location/' + query_set
+                query_url = 'http://192.144.143.60:18000/api/v1/location/' + query_set
                 // 根据IP获取用户定位
                 $.ajax({
                     type: "get",
@@ -72,7 +72,7 @@ function write_surrounding_weather() {
     var $location = localStorage.getItem("location");
     $.ajax({
         type: "get",
-        url: "http://127.0.0.1:8000/api/v1/weather/" + $location + "?surrounding_weather=1",
+        url: "http://192.144.143.60:18000/api/v1/weather/" + $location + "?surrounding_weather=1",
         success: function (result) {
             // result = {
             //     'code': 200,
@@ -113,7 +113,7 @@ function write_surrounding_tour() {
     var $location = localStorage.getItem("location");
     $.ajax({
         type: "get",
-        url: "http://127.0.0.1:8000/api/v1/tour/" + $location + "?surrounding_weather=1",
+        url: "http://192.144.143.60:18000/api/v1/tour/" + $location + "?surrounding_weather=1",
         success: function (result) {
             // result = {
             //     'code': 200,
@@ -151,6 +151,6 @@ function write_surrounding_tour() {
 
 // 切换新闻详情页
 function swap_infopage(new_id) {
-    window.location = '/news_info'
+    window.location = '/news_info?new_id=' + new_id
     console.log(window.location)
 }
