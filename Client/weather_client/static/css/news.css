@@ -159,13 +159,13 @@
 	list-style: none;
 }
 
-.bottom .content ul li:first-child a {
+/* .bottom .content ul li:first-child a {
 	font-weight: 900;
 	font-size: 1pc;
-}
+} */
 
 .bottom .content ul li a {
 	color: #fff;
 	text-decoration: none;
-	font-size: 14px;
+	font-size: 16px;
 }
