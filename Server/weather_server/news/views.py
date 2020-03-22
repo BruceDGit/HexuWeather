@@ -172,7 +172,7 @@ def today_news(request,location):
     with connection.cursor() as cur:
         sql = """
         select a.id, a.title, a.date
-          from (select id, title, date from news where date > (now() - interval 2 day))a
+          from (select id, title, date from news where date > (now() - interval 1 day))a
           left join news_recommendation b
             on a.id = b.new_id
       order by a.id desc;
