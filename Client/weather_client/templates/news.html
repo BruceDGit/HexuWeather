@@ -114,11 +114,11 @@
                     </div>
                 </div>
                 <div class="card">
-                    <h2>城市新闻</h2>
+                    <h2>24h资讯</h2>
                     <div class="bottom">
                         <div class="content">
-                            <ul>
-                                <li>
+                            <ul id="today_news">
+                                <!-- <li>
                                     <a
                                         href="javascript:void(0);" onclick="swap_infopage('test_new_id')">十一出游去哪里？魅力天津"数"风流</a>
                                 </li>
@@ -140,9 +140,9 @@
                                 <li>
                                     <a href="javascript:void(0);" onclick="swap_infopage('test_new_id')">百亩花海迎国庆
                                         京津国色天香牡丹园开启秋游季</a>
-                                </li>
+                                </li> -->
                             </ul>
-                            <ul>
+                            <!-- <ul>
                                 <li>
                                     <a
                                         href="javascript:void(0);" onclick="swap_infopage('test_new_id')">国庆假期出游谨防“低价团”等消费陷阱</a>
@@ -166,7 +166,7 @@
                                     <a
                                         href="javascript:void(0);" onclick="swap_infopage('test_new_id')">国庆假期继续免收7座及以下小型客车通行费</a>
                                 </li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                 </div>
@@ -231,6 +231,19 @@
 
     $(function(){
         showBanner();
+
+        //------------------------------------------------------
+        //                      24h资讯                     
+        //------------------------------------------------------
+     
+        // 1.查找本地存储是否有定位信息
+        if (localStorage.getItem("location")) {
+            // 2.如果有就直接发请求获取
+            write_24h_news();
+        } else {
+            // 3.如果没有,则程序获取用户定位信息,之后再发请求获取
+            getLocation({ myfunc: write_24h_news })
+        }
 
         //------------------------------------------------------
         //                      周边天气                      
