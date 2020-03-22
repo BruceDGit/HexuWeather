@@ -53,3 +53,43 @@ function showWeatherNewsBanner() {
     });
 };
 showWeatherNewsBanner();
+
+// 渲染今日资讯数据
+function write_24h_news() {
+    var $location = localStorage.getItem("location");
+    $.ajax({
+        type: "get",
+        url: "http://192.144.143.60:18000/api/v1/news/today/" + $location,
+        success: function (result) {
+            // result = {
+            //                     code: 200,
+            //                     data: {
+            //                                 	n_id: [ 4110, 4109 ],
+            //                                 	title: [
+            //                                 		"台湾地区新增27例新冠肺炎确诊病例 累计135例",
+            //                                 		"广东省委书记李希、省长马兴瑞，晚上接站(图)"
+            //                                 	],
+            //                                 	date: [ "2020-03-20 16:19:00", "2020-03-20 16:29:00" ]
+            //                     	}
+            //                 }
+            if (200 == result.code) {
+                var today_news_tag = $("#today_news")
+                var id_list = result.data
+                var ul_html = ''
+                var len = result.data.n_id.length
+                for (var i = 0; i < len; i++) {
+                    ul_html += '<li> <a href="javascript:void(0);" onclick="swap_infopage('
+                    ul_html += result.data.n_id[i]
+                    ul_html += ')">'
+                    ul_html += result.data.title[i]
+                    ul_html += '&nbsp;&nbsp;&nbsp;&nbsp;'
+                    ul_html += result.data.date[i].substr(0, 10)
+                    ul_html += '</a></li>'
+                }
+                today_news_tag.html(ul_html)
+            } else {
+                alert(result.error)
+            }
+        }
+    })
+}
