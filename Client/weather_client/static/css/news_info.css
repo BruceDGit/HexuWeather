@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	max-width: 100%;
-	display: block;
+	/* display: block; */
 }
 
 .box {
@@ -10,6 +10,119 @@
 	width: 45pc;
 	height: 100%;
 }
+
+
+/* -------------------分割------------------- */
+
+a {
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+label {
+    cursor: default;
+}
+
+div {
+    display: block;
+}
+
+.top-bar-wrap {
+    height: 64px;
+    position: relative;
+    z-index: 10000;
+}
+
+.date-source {
+    float: left;
+    line-height: 16px;
+    padding: 24px 0;
+}
+
+.date-source .date {
+    font-size: 16px;
+    color: #fff;
+}
+
+.date-source .source {
+    font-size: 16px;
+    color: #fff;
+    padding-left: 12px;
+}
+
+.article {
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 32px;
+}
+
+.article {
+    color: #fff;
+}
+
+.article-content  {
+	margin: 0;
+	padding: 0;
+	font-size: 16px !important;
+	margin-bottom: 30px;
+}
+
+.article-bottom {
+	margin-top: 24px;
+	display: block;
+}
+
+.article-bottom .keywords {
+    float: left;
+    font-size: 16px;
+}
+
+.keywords label {
+	/* font-weight: 700; */
+	font-size: 16px;
+    color: #fff;
+}
+
+.article-bottom .keywords a {
+    padding-right: 10px;
+	color: #fff;
+	text-decoration: none;
+	padding-right: 10px;
+}
+
+#new_imgs {
+	display: block;
+    padding-top: 9px;
+    margin: 0 auto;
+}
+
+.new_imgs_box {
+	margin: 0 auto;
+}
+
+.rightcolumn .card #news_recommend li>*{
+	float: left;
+    margin: 0;
+    padding: 0;
+    padding-right: 8px;
+    width: 33%;
+    height: 35px;
+    line-height: 50px;
+    font-size: 13px;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+/* -------------------分割------------------- */
 
 .weatherNewsBanner {
 	position: relative;
