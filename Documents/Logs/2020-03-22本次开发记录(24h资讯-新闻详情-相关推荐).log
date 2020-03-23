@@ -1,0 +1,105 @@
+
+一.生产环境 - 开发环境配置对照
+weather_server
+	生产环境url: 
+	192.144.143.60:18000
+
+	开发环境url:
+	192.168.1.5:18000
+
+weather_client
+	生产环境配置: 
+	192.144.143.60:5000
+
+	开发环境配置:
+	192.168.1.5:5000
+
+
+二.生产环境代码如何迁移到开发环境:
+weather_client部分
+	1.替换IP
+		server:
+		将前端静态页面里的 http://192.144.143.60:18000 全部替换为 http://192.168.1.5:18000
+	2.将 flask_client.py 中 __main__ 函数中的 127.0.0.1 改为 0.0.0.0
+weather_server部分不需要修改
+
+
+
+三.本次新增两个接口
+	新闻列表url:
+	http://192.168.1.5:18000/api/v1/news/today/中国,天津,天津
+	新闻详情url(不是新增):
+	http://192.168.1.5:18000/api/v1/news/detail?new_id=1326
+	相关新闻url:
+	http://192.168.1.5:18000/api/v1/news/recommendation?new_id=1326
+
+
+
+
+四.本次修改的脚本:
+	------Django部分
+	news/urls.py  √
+	news/views.py  √
+
+
+	------前端部分
+	news.js  √
+	news.html  √
+	news.css  √
+
+	news_info.html  √
+	news_info.js  √
+	news_info.css  √
+
+	common.js  √
+
+
+五.开发环境已完成脚本如何迁移至生产环境:
+	1.登陆到服务器, 将第三步中被修改的文件进行更名备份
+	2.将本地已修改完的脚本上传到对应目录下
+	3.重启服务器【先重启uwsgi，然后再重启nginx】, 步骤如下:
+
+		第一步.服务器切换至weather_server目录下:
+		sudo uwsgi --stop uwsgi.pid
+		sudo uwsgi --ini uwsgi.ini
+
+		第二步.服务器切换至weather_client目录下:
+		sudo uwsgi --stop uwsgi.pid
+		sudo uwsgi --ini uwsgi.ini
+
+		第三步.重启nginx
+		sudo service nginx restart
+
+
+六.开发相关新闻模块时被修改的脚本:
+	------Django部分
+	news/urls.py  √
+	news/views.py  √
+
+
+	------前端部分
+	news_info.html  √
+	news_info.css  √
+	news_info.js  √
+
+
+七.解决背景图加载慢的问题,修改的脚本:
+	------前端部分
+	style.css
+	index.html
+
+background方式:
+background.jpg	200	jpeg	index	1.4 MB	22.14 s	
+Imagecity.jpg	200	jpeg	index	1.2 MB	20.33 s
+
+改用img方式之后没有什么区别, 但还是加上去了
+
+
+
+
+
+
+
+
+
+
