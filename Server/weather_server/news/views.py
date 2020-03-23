@@ -175,7 +175,7 @@ def today_news(request,location):
           from (select id, title, date from news where date > (now() - interval 1 day))a
           left join news_recommendation b
             on a.id = b.new_id
-      order by a.id desc;
+      order by a.date desc;
         """
         cur.execute(sql)
         # ((1, '中国人习以为常的地方 为何老外却说“了不得”？'), (2, '澳大利亚不依不饶：中国想在我们议会安插间谍'))
