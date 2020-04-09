@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+var data = [
+[[6.717399, -1.0585597, 42, '疫情'], [2.7943902, -3.817654, 89, '新冠肺炎'], [1.8898697, -3.4832668, 8, '武汉'], [1.4642243, -4.1180577, 13, '湖北'], [1.7248734, -2.1983955, 2, '南海'], [3.5842981, -1.7457333, 4, '美国'], [0.0023275623, -5.2004256, 2, '内蒙古自治区'], [2.1398222, -2.918651, 2, '特朗普'], [2.6463513, -2.2233493, 3, '世卫组织'], [0.59758073, -0.7418865, 3, '泸山'], [1.0065415, -2.115727, 4, '西昌'], [2.7542648, -2.4745467, 4, '感染者'], [1.0502325, -4.8283176, 2, '广东'], [0.9748444, -2.9000554, 6, '华春莹'], [0.15184067, -5.41723, 4, '北京'], [0.68768984, -0.32147717, 2, '油菜籽'], [0.19586262, -5.027361, 2, '海南'], [4.6173425, -1.3379031, 2, '医疗'], [2.297199, -1.1082698, 2, '医疗器械'], [4.813656, -1.3437513, 4, '粮食'], [0.37355205, -4.5368285, 2, '内蒙古'], [2.0444167, -3.7423344, 2, '意大利'], [2.1631885, -2.881345, 2, '伊朗']]
+];
+
+option = {
+    backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
+        offset: 0,
+        color: '#f7f8fa'
+    }, {
+        offset: 1,
+        color: '#cdd0d5'
+    }]),
+    title: {
+        text: '2020年4月舆情监控'
+    },
+    xAxis: {
+        splitLine: {
+            lineStyle: {
+                type: 'dashed'
+            }
+        }
+    },
+    yAxis: {
+        splitLine: {
+            lineStyle: {
+                type: 'dashed'
+            }
+        },
+        scale: true
+    },
+    series: [{
+        name: '1990',
+        data: data[0],
+        type: 'scatter',
+        symbolSize: function (data) {
+            return data[2];
+        },
+        label: { 
+            normal: {
+                show: true,
+                position: 'top',
+                color: 'blue', 
+                formatter: '{@[3]}' 
+            },
+        },
+        itemStyle: {
+            shadowBlur: 10,
+            shadowColor: 'rgba(120, 36, 50, 0.5)',
+            shadowOffsetY: 5,
+            color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                offset: 0,
+                color: 'rgb(251, 118, 123)'
+            }, {
+                offset: 1,
+                color: 'rgb(204, 46, 72)'
+            }])
+        }
+    }]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
